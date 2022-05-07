@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generate Random Password</title>
+</head>
+<link href="index.css" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+  <h1>Generate Random <br>Password</h1><br>
+
+  <div class="nameField">
+    <input type="text" placeholder="Enter A Name" id="nameId" class="nameFieldInp inp">
+  </div>
+  <div class="passField">
+    <input type="text" placeholder="Click the dice..." id="passId" class="passFieldInp inp">
+  </div>
+
+  <div class="copyPass">
+    <div class="btnSec">
+      <div class="btnOne" id="dice">
+        <i class="fa fa-repeat" id="toR"></i>
+      </div>
+      <div class="btnOne" id="clipboard">
+        <i class="fa fa-clipboard rotate"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="settingDiv-m">
+    <div class="settingDiv-s">
+      <div class="inpRange">
+        <div class="minus" onclick="minus()">-</div>
+        <input type="range" max="300" min="6" class="inpRange" id="range" value="18" id="range">
+        <div class="plus" onclick="plus()">+</div>
+        <div class="inpValue">
+          <text id="rangeMeter">18</text>
+        </div>
+      </div>
+      <div class="line"></div>
+
+      <div class="secOne">
+        <div class="switch-m">
+          <div class="switch-s"></div>
+        </div>
+        <text class="t">Symbols</text>
+      </div>
+      <div class="secOne">
+        <div class="switch-m">
+          <div class="switch-s"></div>
+        </div>
+        <text class="t">Only Lowercase</text>
+      </div>
+
+      <div class="secOne">
+        <div class="switch-m">
+          <div class="switch-s"></div>
+        </div>
+        <text class="t">Only Uppercase</text>
+      </div>
+
+      <div class="secOne">
+        <div class="switch-m">
+          <div class="switch-s"></div>
+        </div>
+        <text class="t">Lowercase & Symbols</text>
+      </div>
+
+      <div class="secOne">
+        <div class="switch-m">
+          <div class="switch-s"></div>
+        </div>
+        <text class="t">Uppercase & Symbols</text>
+      </div>
+
+      <div class="secOne">
+        <div class="switch-m">
+          <div class="switch-s"></div>
+        </div>
+        <text class="t">Only Number</text>
+      </div>
+    </div>
+  </div>
+
+  <div class="historyBtn" onclick="showHistory()">
+    <i class="fa fa-history"></i>
+  </div>
+
+  <div class="historySection-m" id="histM">
+    <div class="historySection-s" id="histS">
+      <button onclick="clearLocal()">Delete All Stored Passwords</button>
+      <div id="mainBody"></div>
+    </div>
+  </div>
+
+  <div class="navBtn" onclick="callNav()">
+    <div class="barOne"></div>
+    <div class="barTwo"></div>
+    <div class="barThi"></div>
+  </div>
+
+  <div class="navBar" id="nav">
+    <div class="head">
+      <text>Password Generator</text>
+    </div>
+    <div class="viewCode">
+      <i class="fa fa-github"></i><text>View Code On Github</text>
+    </div>
+    <div class="vDiv">
+      <text>v2.0.0</text>
+      <br>
+      <text>Last update : 07-05-2022</text>
+    </div>
+  </div>
+  <div class="modal" id="navM"></div>
+
+  <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
