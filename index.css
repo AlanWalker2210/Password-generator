@@ -257,3 +257,13 @@ background: linear-gradient(45deg, #1AB6FF 0%, rgba(2,0,36,1) 51%, #E36468 100%)
   justify-content: center;
   font-size: 1.3rem;
 }
+.viewCode {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.viewCode i {
+  font-size: 2rem;
+  margin: 0 10px 0 10px;
+}
