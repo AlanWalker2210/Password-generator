@@ -110,49 +110,49 @@ function generate() {
   if (btnMover[0].classList.contains("switchMove")) {
     for (var i = 1; i <= range.value; i++) {
       digit = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz11223344556677889900@_-=:/!+@_-+:/?@@@____";
-      var char = Math.floor(Math.random() * digit.length + 1);
+      var char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
   }
   else if (btnMover[1].classList.contains("switchMove")) {
     for (var i = 1; i <= range.value; i++) {
       digit = "abcdefghijklmnopqrstuvwxyz";
-      var char = Math.floor(Math.random() * digit.length + 1);
+      var char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
   }
   else if (btnMover[2].classList.contains("switchMove")) {
     for (var i = 1; i <= range.value; i++) {
       digit = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-      var char = Math.floor(Math.random() * digit.length + 1);
+      var char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
   }
   else if (btnMover[3].classList.contains("switchMove")) {
     for (var i = 1; i <= range.value; i++) {
       digit = "abcdefghijklmnopqrstuvwxyz11223344556677889900@_-=:/!+";
-      var char = Math.floor(Math.random() * digit.length + 1);
+      var char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
   }
   else if (btnMover[4].classList.contains("switchMove")) {
     for (var i = 1; i <= range.value; i++) {
       digit = "ABCDEFGHIJKLMNOPQRSTUVWXYZ11223344556677889900@_-=:/!+";
-      var char = Math.floor(Math.random() * digit.length + 1);
+      var char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
   }
   else if (btnMover[5].classList.contains("switchMove")) {
     for (var i = 1; i <= range.value; i++) {
       digit = "11223344556677889900";
-      var char = Math.floor(Math.random() * digit.length + 1);
+      var char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
   }
   else {
     for (var i = 1; i <= range.value; i++) {
       digit = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz11223344556677889900@_-=:/!+";
-      var char = Math.floor(Math.random() * digit.length + 1);
+      var char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
   }
