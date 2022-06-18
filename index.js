@@ -102,7 +102,7 @@ function popRange() {
       rangeMeter.innerHTML = i;
     }
   }
-};
+}
 
 function generate() {
   var pass = '';
@@ -151,7 +151,7 @@ function generate() {
   }
   else {
     for (var i = 1; i <= range.value; i++) {
-      digit = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz11223344556677889900@_-=:/!+";
+      digit = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
       var char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
@@ -168,69 +168,6 @@ function paste() {
   passId.value = generate();
 }
 
-function copy() {
-  if (passId.value == '') {
-    alert("Generate a new password first.");
-  }
-  else if (confirm("Yow want to copy :" + "  " + passId.value)) {
-    //alert(confirm("Yow want to copy -" + passId.value));
-    var copyText = passId;
-    copyText.select();
-    copyText.setSelectionRange(0, 9999);
-    document.execCommand("copy");
-
-    passId.blur();
-
-    getThePassword()
-
-    function getThePassword() {
-      var a = new Date();
-      var t = [a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds() + "&nbsp;" + a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear()];
-
-      var passInfo = document.getElementById("passId").value;
-      var passPort = nameId.value;
-
-      if (localStorage.getItem('itemsJson') == null) {
-        thisArray = [];
-        thisArray.push([passPort, t[0], passInfo]);
-        localStorage.setItem('itemsJson', JSON.stringify(thisArray));
-      }
-      else {
-        thisArraystr = localStorage.getItem('itemsJson');
-        thisArray = JSON.parse(thisArraystr);
-        thisArray.push([passPort, t[0], passInfo]);
-        localStorage.setItem('itemsJson', JSON.stringify(thisArray));
-      }
-      updateList();
-    }
-
-    function updateList() {
-      if (localStorage.getItem('itemsJson') == null) {
-        thisArray = [];
-        localStorage.setItem('itemsJson', JSON.stringify(thisArray));
-      }
-      else {
-        thisArraystr = localStorage.getItem('itemsJson');
-        thisArray = JSON.parse(thisArraystr);
-      }
-      let mainBody = document.getElementById("mainBody");
-      let str = '';
-      thisArray.forEach((element, index) => {
-
-
-        str += `
-            <ol class="ol">
-             <li class="elOne">${element[0]}</li>
-             <li class="elTwo">${element[1]}</li>
-             <li class="elThi">${element[2]}</li>
-             <div class="line"></div>
-            </ol>
-              `
-      });
-      mainBody.innerHTML = str;
-    }
-  }
-}
 updateList()
 
 function getThePassword() {
@@ -280,6 +217,25 @@ function updateList() {
   mainBody.innerHTML = str;
 }
 
+
+function copy() {
+  if (passId.value == '') {
+    alert("Generate a new password first.");
+  }
+  else if (confirm("Yow want to copy :" + "  " + passId.value)) {
+    //alert(confirm("Yow want to copy -" + passId.value));
+    var copyText = passId;
+    copyText.select();
+    copyText.setSelectionRange(0, 9999);
+    document.execCommand("copy");
+
+    passId.blur();
+
+    getThePassword()
+  }
+}
+
+
 function plus() {
   document.getElementById("range").value++;
 
@@ -298,13 +254,37 @@ function showHistory() {
 }
 
 function clearLocal() {
-  if (confirm("This actions can not be reversed. Are you sure?")) {
-    localStorage.clear()
-  }
-  else {
-    undefined
-  }
+  let docDel = document.getElementById("delCall");
+
+  docDel.classList.add('toCall');
+  /* if (confirm("This actions can not be reversed. Are you sure?")) {
+     localStorage.clear()
+   }
+   else {
+     undefined
+   }*/
   updateList()
+}
+
+function yup() {
+  localStorage.clear();
+  updateList()
+
+  rightCall.classList.add('rightCall');
+
+  setTimeout(() => {
+    rightCall.classList.remove('rightCall');
+  }, 2000)
+
+  setTimeout(() => {
+    let docDel = document.getElementById("delCall");
+    docDel.classList.remove('toCall');
+  }, 10)
+}
+
+function nope() {
+  let docDel = document.getElementById("delCall");
+  docDel.classList.remove('toCall');
 }
 
 function callNav() {
@@ -313,6 +293,5 @@ function callNav() {
 }
 navM.onclick = function() {
   nav.classList.remove("navM");
-    navM.style.display = 'none';
-
+  navM.style.display = 'none';
 }
