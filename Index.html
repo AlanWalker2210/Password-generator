@@ -7,10 +7,10 @@
   <title>Generate Random Password</title>
 </head>
 <link href="index.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
 
 <body>
-  <h1>Generate Random <br>Password</h1><br>
+  <h1 class="bgImg">Generate Random <br>Password</h1><br>
 
   <div class="nameField">
     <input type="text" placeholder="Enter A Name" id="nameId" class="nameFieldInp inp">
@@ -33,9 +33,13 @@
   <div class="settingDiv-m">
     <div class="settingDiv-s">
       <div class="inpRange">
-        <div class="minus" onclick="minus()">-</div>
+        <div class="minus" onclick="minus()">
+          <img src="/icons/dash-lg.svg">
+        </div>
         <input type="range" max="300" min="6" class="inpRange" id="range" value="18" id="range">
-        <div class="plus" onclick="plus()">+</div>
+        <div class="plus" onclick="plus()">
+          <img src="/icons/plus.svg">
+        </div>
         <div class="inpValue">
           <text id="rangeMeter">18</text>
         </div>
@@ -110,12 +114,45 @@
       <i class="fa fa-github"></i><a href="https://github.com/AlanWalker2210/Password-generator">View Code On Github</a>
     </div>
     <div class="vDiv">
-      <text>v2.0.0</text>
+      <text>v2.0.1</text>
       <br>
-      <text>Last update : 07-05-2022</text>
+      <text>Last update : 18-06-2022</text>
     </div>
   </div>
   <div class="modal" id="navM"></div>
+
+  <div class="alertDeleteM" id="delCall">
+    <div class="alertDeleteS">
+      <div class="txtDel">
+        Are You Sure? This Action Can Not Be Reversed.
+      </div>
+      <div class="btnAction">
+        <div class="btnActionF">
+          <button id="delSure" onclick="yup()">Yes</button>
+        </div>
+        <div class="btnActionS">
+          <button id="noSure" onclick="nope()">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="rightActM" id="rightCall">
+    <div class="rightActS">
+      <text>✓</text>
+    </div>
+  </div>
+
+  <div class="doYouM">
+    <div class="doYouS">
+      <div class="doYouQu">
+        Do You Want To Copy This Password?
+      </div>
+      <div class="doNotSave">
+        <input type="checkbox" id="checkNot"> Do Not Save This Password.
+      </div>
+    </div>
+  </div>
 
   <script type="text/javascript" src="index.js"></script>
 </body>
