@@ -102,7 +102,7 @@ function popRange() {
       rangeMeter.innerHTML = i;
     }
   }
-}
+};
 
 function generate() {
   var pass = '';
