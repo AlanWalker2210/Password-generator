@@ -4,11 +4,15 @@ const diceClick = document.getElementById("dice");
 let range = document.getElementById("range");
 const clip = document.getElementById("clipboard");
 var passId = document.getElementById("passId");
+var card = document.getElementById("Card");
 
 diceClick.addEventListener('click', paste);
-clip.addEventListener("click", copy);
+clip.addEventListener("click", copyCall);
 
 range.oninput = popRange;
+
+//range.oninput = setLocalRange;
+
 
 btnSelector[0].onclick = function() {
   btnMover[0].classList.add("switchMove");
@@ -95,6 +99,10 @@ btnSelector[5].onclick = function() {
   btnSelector[3].classList.remove("switch-bg");
   btnSelector[4].classList.remove("switch-bg");
 }
+
+popRange();
+
+
 
 function popRange() {
   for (var i = 0; i < 301; i++) {
@@ -217,13 +225,26 @@ function updateList() {
   mainBody.innerHTML = str;
 }
 
+function copyCall() {
+  if (passId.value == '') {
+    textAlDiv.classList.add('calNot');
+    textAle.innerHTML = "Please Generate A Password First.";
+    setTimeout(() => {
+      textAlDiv.classList.remove('calNot');
+    }, 2000)
+  }
+  else {
+    card.classList.add('copyCard');
+  }
+}
+
+function nopeCard() {
+  card.classList.remove('copyCard');
+}
 
 function copy() {
-  if (passId.value == '') {
-    alert("Generate a new password first.");
-  }
-  else if (confirm("Yow want to copy :" + "  " + passId.value)) {
-    //alert(confirm("Yow want to copy -" + passId.value));
+  var radCheck = document.getElementById('checkNot');
+  if (radCheck.checked) {
     var copyText = passId;
     copyText.select();
     copyText.setSelectionRange(0, 9999);
@@ -231,7 +252,37 @@ function copy() {
 
     passId.blur();
 
+    card.classList.remove('copyCard');
+
+    textAlDiv.classList.add('calNot');
+
+    textAle.innerHTML = "Password Copied But Not Saved.";
+    
+    setTimeout(() => {
+      textAlDiv.classList.remove('calNot');
+    }, 2000)
+
+  }
+  else {
+    //alert(confirm("Yow want to copy -" + passId.value));
+    var copyText = passId;
+    copyText.select();
+    copyText.setSelectionRange(0, 9999);
+    document.execCommand("copy");
+
+    passId.blur();
     getThePassword()
+
+    card.classList.remove('copyCard');
+    
+    textAlDiv.classList.add('calNot');
+
+    textAle.innerHTML = "Password Copied And Saved.";
+    
+    setTimeout(() => {
+      textAlDiv.classList.remove('calNot');
+    }, 2000)
+
   }
 }
 

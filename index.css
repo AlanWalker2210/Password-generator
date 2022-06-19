@@ -25,24 +25,8 @@ body {
 
 .bgImg {
   color: #FFFFFFC2;
-  -webkit-text-stroke: .5px #000;
-  background-position: 0% 0%;
-  animation: backMove 55s linear infinite;
 }
 
-@keyframes backMove {
-  0% {
-    background-position: 0% 0%;
-  }
-
-  50% {
-    background-position: 100% 100%;
-  }
-
-  100% {
-    background-position: 0% 0%;
-  }
-}
 
 .inp {
   width: 85%;
@@ -51,7 +35,7 @@ body {
   text-align: center;
   background: rgba(0, 0, 0, 0.5);
   border: 1px solid #000;
-/*  backdrop-filter: blur(5px);*/
+  /*  backdrop-filter: blur(5px);*/
   border-radius: 5px;
   outline: none;
   box-shadow: .1px .1px 8px #000;
@@ -87,7 +71,7 @@ body {
   border-radius: 5px;
   box-shadow: .1px .1px 5px #f00;
   transition: 0.8s;
-/*  backdrop-filter: blur(2px);*/
+  /*  backdrop-filter: blur(2px);*/
   color: #fff;
 }
 
@@ -106,7 +90,7 @@ body {
   background: rgba(46, 46, 46, 0.5);
   border: 1px solid #000;
   box-shadow: .1px .1px 10px #000;
- /* backdrop-filter: blur(2px);*/
+  /* backdrop-filter: blur(2px);*/
   border-radius: 5px;
   position: relative;
   color: #fff;
@@ -203,7 +187,7 @@ body {
   justify-content: center;
   border-radius: 50%;
   box-shadow: .1px .1px 5px #000;
- /* backdrop-filter: blur(3px);*/
+  /* backdrop-filter: blur(3px);*/
 }
 
 .historySection-m {
@@ -272,9 +256,9 @@ body {
   position: absolute;
   left: 0px;
   top: 10px;
-  border-radius: 0 50% 50% 0;
+  border-radius: 0 10% 10% 0;
   box-shadow: .1px .1px 5px #000;
-/*  backdrop-filter: blur(2px);*/
+  /*  backdrop-filter: blur(2px);*/
 }
 
 .barOne,
@@ -285,15 +269,19 @@ body {
   background: #fff;
   margin: 10px 0 10px 5px;
 }
+
 .barOne {
   transform: rotate(40deg) translateY(1px);
 }
+
 .barThi {
   transform: rotate(-40deg) translateY(-1px);
 }
+
 .barTwo {
   display: none;
 }
+
 .navBar {
   width: 250px;
   height: 100vh;
@@ -359,9 +347,10 @@ body {
   transition: 0.8s;
   z-index: 250;
 }
+
 .alertDeleteS {
   width: 90%;
-  height : 90px;
+  height: 90px;
   background: #fff;
   border-radius: 5px;
   box-shadow: .1px .1px 10px #000;
@@ -369,12 +358,14 @@ body {
   overflow: hidden;
   z-index: 555;
 }
+
 .txtDel {
   width: 90%;
   text-align: left;
   padding: 10px 0 0 20px;
   word-wrap: break-word;
 }
+
 .btnAction {
   width: 100%;
   height: 40px;
@@ -382,28 +373,52 @@ body {
   justify-content: flex-end;
   align-items: center;
 }
+
 .btnActionF {
   margin: 0 20px 0 10px;
 }
+
 .btnActionS {
   margin: 0 20px 0 0;
 }
-#delSure,#noSure {
+
+#delSure,
+#noSure,
+#yCopy,
+#nCopy {
   width: 50px;
   height: 30px;
   background: none;
-  box-shadow: .1px .1px 1px #000;
-  border-radius: 5px;
+  border-radius: 2px;
   font-size: 1.1rem;
   color: #fff;
   padding: 0 5px 0 5px;
   border: none;
+  border: 0.0001px solid #000;
+  transition: 0.8s;
 }
+
 #delSure {
   background: #F63838;
 }
+
 #noSure {
   background: #3891F6;
+}
+
+#yCopy {
+  background: #10C432;
+}
+
+#nCopy {
+  background: #D34168;
+  margin: 0 15px 0 10px;
+}
+#delSure:hover,
+#noSure:hover,
+#yCopy:hover,
+#nCopy:hover {
+  border: 2px solid #000;
 }
 .toCall {
   transform: translateY(0);
@@ -422,10 +437,11 @@ body {
   z-index: 100;
   pointer-events: none;
 }
+
 .rightActS {
   width: 50px;
   height: 50px;
-  background: #3DDE85;
+  background: #0B9FE1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -434,6 +450,7 @@ body {
   color: #000;
   box-shadow: .1px .1px 10px #000;
 }
+
 .rightCall {
   transform: translateY(0);
 }
@@ -446,7 +463,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: translateY(200px);
+  transition: 0.8s;
 }
+
 .doYouS {
   width: 90%;
   height: 90px;
@@ -457,9 +477,11 @@ body {
   border-radius: 5px;
   overflow: hidden;
 }
+
 .doYouQu {
   padding: 5px 0 0 5px;
 }
+
 .doNotSave {
   width: 100%;
   height: 20px;
@@ -467,6 +489,47 @@ body {
   align-items: center;
   margin: 5px 0 5px 0;
 }
+
 #checkNot {
   margin: 0 10px 0 10px;
+}
+
+.btnSection {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.copyCard {
+  transform: translateY(0);
+}
+.copyOrNotM {
+  width: 100%;
+  height: 40px;
+  position: fixed;
+  bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(100px);
+    transition: 0.8s;
+}
+.copyOrNotS {
+  width: 90%;
+  height: 35px;
+  background: #FFFFFF;
+  box-shadow: .1px .1px 5px#000;
+  color: #000;
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 5px;
+}
+#textAle {
+  margin: 0 0 0 10px;
+}
+.calNot {
+  transform: translateY(0);
 }
