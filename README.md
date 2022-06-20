@@ -28,7 +28,7 @@ Open https://randompass.epizy.com and press the repeat button to generate a pass
 
 # v2.0.0
 
-* Created whole website from sctrach.
+* Created whole website from scratch.
 * Optimized performance
 * Add password saver.
 * Add time and name fields in password saver.
