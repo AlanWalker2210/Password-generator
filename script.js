@@ -345,5 +345,4 @@ function callNav() {
 navM.onclick = function() {
   nav.classList.remove("navM");
   navM.style.display = 'none';
-  var supp;
 }
