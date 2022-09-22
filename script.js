@@ -225,6 +225,14 @@ function updateList() {
   mainBody.innerHTML = str;
 }
 
+let elThiPassInn = document.querySelectorAll('.elThi');
+
+for(const eleThi of elThiPassInn) {
+  eleThi.addEventListener('click',()=>{
+    alert(eleThi.innerHTML)
+  })
+}
+
 function copyCall() {
   if (passId.value == '') {
     textAlDiv.classList.add('calNot');
