@@ -217,7 +217,7 @@ function updateList() {
              <ol class="ol"${index + 1}>
              <li class="elOne">${element[0]}</li>
              <li class="elTwo">${element[1]}</li>
-             <li class="elThi">${element[2]}</li>
+             <input class="elThi" id='thisCopy'value='${element[2]}'>
              <div class="line"></div>
              </ol>
               `
@@ -227,11 +227,17 @@ function updateList() {
 
 let elThiPassInn = document.querySelectorAll('.elThi');
 
-for(const eleThi of elThiPassInn) {
-  eleThi.addEventListener('click',()=>{
+
+for (const eleThi of elThiPassInn) {
+  eleThi.addEventListener('click', () => {
     alert(eleThi.innerHTML)
+    let thisCopyT = document.getElementById('thisCopy').innerHTML;
+    
+    
   })
 }
+
+
 
 function copyCall() {
   if (passId.value == '') {
@@ -265,7 +271,7 @@ function copy() {
     textAlDiv.classList.add('calNot');
 
     textAle.innerHTML = "Password Copied But Not Saved.";
-    
+
     setTimeout(() => {
       textAlDiv.classList.remove('calNot');
     }, 2000)
@@ -282,11 +288,11 @@ function copy() {
     getThePassword()
 
     card.classList.remove('copyCard');
-    
+
     textAlDiv.classList.add('calNot');
 
     textAle.innerHTML = "Password Copied And Saved.";
-    
+
     setTimeout(() => {
       textAlDiv.classList.remove('calNot');
     }, 2000)
