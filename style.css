@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
 @font-face {
   font-family: Elegant;
   src: url("/fonts/RadioCanada-Regular.ttf");
@@ -11,22 +12,59 @@
 
 body {
   text-align: center;
+  background: #000;
 }
 .thisTitle {
   font-size: 2.5rem;
   color: transparent;
-  -webkit-text-stroke: 0.5px #000;
-  background-image: url('/images/images.jpeg');
+  -webkit-text-stroke: 0px #000;
+  background: -webkit-linear-gradient(45deg , #FE2828, #FF9696, #745BFF);
   -webkit-background-clip: text;
-  animation: scaleIn 55s linear infinite;
+  background-position: center;
+  font-family: Mukta;
+  font-weight: 700;
+  animation: hueRot 55s linear infinite;
 }
-@keyframes scaleIn {
-  0% {
-    background-position: 100;
-  }
+@keyframes hueRot {
   100% {
-    background-position: 200%;
+    filter: hue-rotate(360deg);
   }
+}
+.borderLine-m {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items : center;
+  margin-top: -20px;
+}
+.borderLine-s {
+  width: 90%;
+  height: 170px;
+  background: none;
+ /* border: 3px solid #492BF1;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #7C65FF inset,
+              0 0 5px #7C65FF;*/
+}
+.inputAppName {
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inpApp {
+  width: 80%;
+  height: 25px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1.5px solid #fff;
+  outline: none;
+  background: none;
+  /*background: linear-gradient(90deg ,#000 90%,#8C8C8C 100%);*/
+  color: #fff;
 }
 /*.bgImg {
   color: #FFFFFFC2;
