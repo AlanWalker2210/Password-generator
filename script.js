@@ -217,7 +217,7 @@ function updateList() {
              <ol class="ol"${index + 1}>
              <li class="elOne">${element[0]}</li>
              <li class="elTwo">${element[1]}</li>
-             <input class="elThi" id='thisCopy'value='${element[2]}'>
+             <input class="elThi" id='thisCopy'value='${element[2]}' readonly>
              <div class="line"></div>
              </ol>
               `
@@ -230,10 +230,12 @@ let elThiPassInn = document.querySelectorAll('.elThi');
 
 for (const eleThi of elThiPassInn) {
   eleThi.addEventListener('click', () => {
-    alert(eleThi.innerHTML)
-    let thisCopyT = document.getElementById('thisCopy').innerHTML;
+    alert(eleThi.value)
     
-    
+    var copyText = eleThi;
+    copyText.select();
+    copyText.setSelectionRange(0, 9999);
+    document.execCommand("copy");
   })
 }
 
