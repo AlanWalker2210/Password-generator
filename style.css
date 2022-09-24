@@ -66,6 +66,21 @@ body {
   /*background: linear-gradient(90deg ,#000 90%,#8C8C8C 100%);*/
   color: #fff;
 }
+.allBtnSect-m {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items : center;
+}
+.allBtnSect-s {
+  width: 90%;
+  height: 80px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 /*.bgImg {
   color: #FFFFFFC2;
 }
