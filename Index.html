@@ -9,15 +9,16 @@
 </head>
 <link href="style.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <body>
   <header role="Title Holder">
     <div>
       <h1 class="thisTitle">
         Generate Random <br> Password
       </h1>
-    </div>
+    </div>a
   </header>
-  
+
   <section role="password-generator">
     <div class="borderLine-m">
       <div class="borderLine-s">
@@ -25,18 +26,49 @@
           <input class="inpApp" type="text" placeholder="Username" id="nameId">
         </div>
         <div class="inputPassField">
-          <input class="inpApp" type="text" placeholder="Your Password Will Generate Here" id="nameId">
+          <input class="inpApp" type="text" placeholder="Your Password Will Generate Here" id="passId">
         </div>
       </div>
     </div>
-    
+  </section>
+
+  <section role="buttons">
     <div class="allBtnSect-m">
       <div class="allBtnSect-s">
-        <button id=""
+        <button class="btn" id="dice">
+          <i class="fa fa-repeat" id="toR"></i>
+        </button>
+        <button class="btn" id="settings">
+          <i class="fa fa-gear"></i>
+        </button>
+        <button class="btn" id="clipboard">
+          <i class="fa fa-clipboard rotate"></i>
+        </button>
       </div>
     </div>
   </section>
- <!-- <h1 class="bgImg">Generate Random <br>Password</h1><br>
+
+  <section class="settings">
+    <div class="settingDiv-m">
+      <div class="settingDiv-s">
+        <div class="rangeBar">
+          <div class="rangeInputs">
+            <div class="minus" onclick="minus()">
+              <img src="/icons/dash-lg.svg">
+            </div>
+            <input type="range" max="300" min="6" class="inpRange" id="range" value="18" id="range">
+            <div class="plus" onclick="plus()">
+              <img src="/icons/plus.svg">
+            </div>
+          </div>
+          <div class="range-o-meter">
+          <text id="rangeMeter">18</text>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- <h1 class="bgImg">Generate Random <br>Password</h1><br>
 
   <div class="nameField">
     <input type="text" placeholder="Enter A Name" id="nameId" class="nameFieldInp inp">
