@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
+
 @font-face {
   font-family: Elegant;
   src: url("/fonts/RadioCanada-Regular.ttf");
@@ -13,40 +14,47 @@
 body {
   text-align: center;
   background: #000;
+  background-image: url('/images/sketch1664092593805.png');
+  background-repeat: no-repeat;
 }
+
 .thisTitle {
   font-size: 2.5rem;
   color: transparent;
   -webkit-text-stroke: 0px #000;
-  background: -webkit-linear-gradient(45deg , #FE2828, #FF9696, #745BFF);
+  background: -webkit-linear-gradient(45deg, #7782FF, #77FFE8);
   -webkit-background-clip: text;
   background-position: center;
   font-family: Mukta;
   font-weight: 700;
   animation: hueRot 55s linear infinite;
 }
+
 @keyframes hueRot {
   100% {
     filter: hue-rotate(360deg);
   }
 }
+
 .borderLine-m {
   width: 100%;
   height: 160px;
   display: flex;
   justify-content: center;
-  align-items : center;
+  align-items: center;
   margin-top: -20px;
 }
+
 .borderLine-s {
   width: 90%;
   height: 150px;
   background: none;
- /* border: 3px solid #492BF1;
+  /* border: 3px solid #492BF1;
   border-radius: 10px;
   box-shadow: 0 0 10px #7C65FF inset,
               0 0 5px #7C65FF;*/
 }
+
 .inputAppName {
   width: 100%;
   height: 90px;
@@ -65,14 +73,17 @@ body {
   background: none;
   /*background: linear-gradient(90deg ,#000 90%,#8C8C8C 100%);*/
   color: #fff;
+  backdrop-filter: blur(2px);
 }
+
 .allBtnSect-m {
   width: 100%;
   height: 60px;
   display: flex;
   justify-content: center;
-  align-items : center;
+  align-items: center;
 }
+
 .allBtnSect-s {
   width: 90%;
   height: 60px;
@@ -80,6 +91,7 @@ body {
   justify-content: space-evenly;
   align-items: center;
 }
+
 .btn {
   width: 40px;
   height: 40px;
@@ -87,21 +99,36 @@ body {
   background: #fff;
   box-shadow: 0 0 5px #888888;
   border-radius: 50%;
-  font-size: 1.8rem;
+  font-size: 2rem;
+}
+.rotSet {
+  transform: rotate(360deg);
+  transition: 0.8s;
 }
 .settingDiv-m {
   width: 100%;
-  height: 270px;
+  height: 0px;/*270*/
   display: flex;
   justify-content: center;
-  align-items : flex-end;
+  align-items: flex-end;
+  color: #fff;
+  overflow: hidden;
+  transition: 0.8s;
+}
+.heightInc {
+  height: 270px;
 }
 .settingDiv-s {
   width: 60%;
   height: 260px;
-  background: #303030;
+  background: #26262E;
   position: relative;
   border-radius: 5px;
+  transform: scale(0);
+  transition: 0.8s;
+}
+.scaleInc {
+  transform: scale(1);
 }
 .settingDiv-s::after {
   content: '';
@@ -109,19 +136,82 @@ body {
   top: -10%;
   left: 43%;
   border: 15px solid;
-  border-color: transparent transparent #303030 transparent;
+  border-color: transparent transparent #26262E transparent;
 }
+
 .rangeBar {
   width: 100%;
   height: 40px;
+  border-bottom: 0.5px solid #404340;
 }
+
 .rangeInputs {
-display: flex;
+  display: flex;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  background: #f00;
   margin: 10px 0 0 0;
+}
+.optionsDiv {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.switchContainer {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.optionsOne {
+  width: 50%;
+  height: 70px;
+  border-bottom: 0.5px solid #404340;
+}
+.border {
+  border-right: 0.5px solid #404340;
+}
+.switch-m {
+  width: 40px;
+  height: 20px;
+  background: #545454;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: .1px .1px 2px #000 inset;
+  transition: 0.8s;
+}
+ .switch-s {
+  width: 15px;
+  height: 15px;
+  background: #000;
+  border-radius: 50%;
+  margin: 0 0 0 3px;
+  transition: 0.5s;
+  box-shadow: .1px .1px 2px #000;
+}
+.switch-bg {
+  background: #8BE182;
+}
+.switchMove {
+  margin: 0 0 0 22px;
+}
+.txtSubCol  {
+  color: #727272;
+}
+.txtColBig,.txtCol {
+  color: #C9C9C9;
+  font-size: 0.7rem;
+}
+.txtColBig {
+  font-size: 0.6rem;
+}
+.rotate {
+  transform: rotate(360deg);
+  transition: 0.3s;
 }
 /*.bgImg {
   color: #FFFFFFC2;
@@ -137,7 +227,8 @@ display: flex;
   border: 1px solid #000;
   border-radius: 5px;
   outline: none;
-  box-shadow: .1px .1px 8px #000;
+  box-shadow: .1px .1px
+  8px #000;
   padding: 0 10px 0 10px;
   color: #fff;
 }
@@ -201,35 +292,8 @@ display: flex;
   text-align: center;
 }
 
-.switch-m {
-  width: 40px;
-  height: 20px;
-  background: #F96F6F;
-  border-radius: 20px;
-  margin: 0 0 0 10px;
-  display: flex;
-  align-items: center;
-  box-shadow: .1px .1px 2px #000 inset;
-  transition: 0.8s;
-}
 
-.switch-bg {
-  background: #1AB6FF;
-}
 
-.switch-s {
-  width: 15px;
-  height: 15px;
-  background: #000;
-  border-radius: 50%;
-  margin: 0 0 0 3px;
-  transition: 0.5s;
-  box-shadow: .1px .1px 2px #000;
-}
-
-.switchMove {
-  margin: 0 0 0 22px;
-}
 
 .t {
   text-align: center;
@@ -340,10 +404,7 @@ display: flex;
   margin: 10px 0 0 0;
 }
 
-.rotate {
-  transform: rotate(360deg);
-  transition: 0.3s;
-}
+
 
 .navBtn {
   width: 25px;

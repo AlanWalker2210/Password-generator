@@ -39,7 +39,7 @@
           <i class="fa fa-repeat" id="toR"></i>
         </button>
         <button class="btn" id="settings">
-          <i class="fa fa-gear"></i>
+          <i class="fa fa-gear" id="toRs"></i>
         </button>
         <button class="btn" id="clipboard">
           <i class="fa fa-clipboard rotate"></i>
@@ -48,9 +48,9 @@
     </div>
   </section>
 
-  <section class="settings">
-    <div class="settingDiv-m">
-      <div class="settingDiv-s">
+  <section role="settings">
+    <div class="settingDiv-m" id="height">
+      <div class="settingDiv-s" id="scale">
         <div class="rangeBar">
           <div class="rangeInputs">
             <div class="minus" onclick="minus()">
@@ -62,7 +62,80 @@
             </div>
           </div>
           <div class="range-o-meter">
-          <text id="rangeMeter">18</text>
+            <text id="rangeMeter">18</text>
+          </div>
+        </div>
+        <div class="lineBar"></div>
+        <div class="optionsDiv">
+          <div class="optionsOne border">
+            <div class="switchContainer">
+              <div class="switch-m">
+                <div class="switch-s"></div>
+              </div>
+            </div>
+            <div class="textT">
+              <p class="txtSubCol">#@&</p>
+              <p class="txtCol">Symbols</p>
+            </div>
+          </div>
+          <div class="optionsOne">
+            <div class="switchContainer">
+              <div class="switch-m">
+                <div class="switch-s"></div>
+              </div>
+            </div>
+            <div class="textT">
+              <p class="txtSubCol">abc</p>
+              <p class="txtCol">Lowercase</p>
+            </div>
+          </div>
+        </div>
+        <div class="optionsDiv">
+          <div class="optionsOne border">
+            <div class="switchContainer">
+              <div class="switch-m">
+                <div class="switch-s"></div>
+              </div>
+            </div>
+            <div class="textT">
+              <p class="txtSubCol">ABC</p>
+              <p class="txtCol">Uppercase</p>
+            </div>
+          </div>
+          <div class="optionsOne">
+            <div class="switchContainer">
+              <div class="switch-m">
+                <div class="switch-s"></div>
+              </div>
+            </div>
+            <div class="textT">
+              <p class="txtSubCol">abc + #@&</p>
+              <p class="txtColBig">Lowercase & symbols</p>
+            </div>
+          </div>
+        </div>
+        <div class="optionsDiv">
+          <div class="optionsOne border">
+            <div class="switchContainer">
+              <div class="switch-m">
+                <div class="switch-s"></div>
+              </div>
+            </div>
+            <div class="textT">
+              <p class="txtSubCol">ABC + @#&</p>
+              <p class="txtColBig">Uppercase + symbols</p>
+            </div>
+          </div>
+          <div class="optionsOne">
+            <div class="switchContainer">
+              <div class="switch-m">
+                <div class="switch-s"></div>
+              </div>
+            </div>
+            <div class="textT">
+              <p class="txtSubCol">123</p>
+              <p class="txtCol">Numbers</p>
+            </div>
           </div>
         </div>
       </div>
@@ -80,7 +153,7 @@
   <div class="copyPass">
     <div class="btnSec">
       <div class="btnOne" id="dice">
-        <i class="fa fa-repeat" id="toR"></i>
+        <i class= "fa fa-repeat" id="toR"></i>
       </div>
       <div class="btnOne" id="clipboard">
         <i class="fa fa-clipboard rotate"></i>

@@ -11,8 +11,6 @@ clip.addEventListener("click", copyCall);
 
 range.oninput = popRange;
 
-//range.oninput = setLocalRange;
-
 
 btnSelector[0].onclick = function() {
   btnMover[0].classList.add("switchMove");
@@ -102,7 +100,17 @@ btnSelector[5].onclick = function() {
 
 popRange();
 
+let settingPopUp = document.getElementById('settings');
 
+settingPopUp.addEventListener('click', ()=> {
+  let settingRot = document.getElementById('toRs');
+  let settScale = document.getElementById('scale');
+  let settHeight = document.getElementById('height');
+
+  settingRot.classList.toggle('rotSet');
+  settScale.classList.toggle('scaleInc');
+  settHeight.classList.toggle('heightInc');
+})
 
 function popRange() {
   for (var i = 0; i < 301; i++) {
@@ -138,14 +146,14 @@ function generate() {
   }
   else if (btnMover[3].classList.contains("switchMove")) {
     for (var i = 1; i <= range.value; i++) {
-      digit = "abcdefghijklmnopqrstuvwxyz11223344556677889900@_-=:/!+";
+      digit = "abcdefghijklmnopqrstuvwxyz11223344556677889900@_-=:/!+@@&&";
       var char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
   }
   else if (btnMover[4].classList.contains("switchMove")) {
     for (var i = 1; i <= range.value; i++) {
-      digit = "ABCDEFGHIJKLMNOPQRSTUVWXYZ11223344556677889900@_-=:/!+";
+      digit = "ABCDEFGHIJKLMNOPQRSTUVWXYZ11223344556677889900@_-=:/!+@@&&";
       var char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
@@ -222,7 +230,7 @@ function updateList() {
              </ol>
               `
   });
-  mainBody.innerHTML = str;
+ // mainBody.innerHTML = str;
 }
 
 let elThiPassInn = document.querySelectorAll('.elThi');
@@ -358,7 +366,8 @@ function callNav() {
   nav.classList.add("navM");
   navM.style.display = 'block';
 }
-navM.onclick = function() {
+/*navM.onclick = function() {
   nav.classList.remove("navM");
   navM.style.display = 'none';
 }
+*/
