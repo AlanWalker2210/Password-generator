@@ -213,6 +213,25 @@ body {
   transform: rotate(360deg);
   transition: 0.3s;
 }
+.passHistory-m {
+  width: 100%;
+  color: #fff;
+}
+.elThi {
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+}
+.eyeCopy {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: #f00;
+}
+.eye {
+  margin-top: -50px;
+}
 /*.bgImg {
   color: #FFFFFFC2;
 }

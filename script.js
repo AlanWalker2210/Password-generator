@@ -7,7 +7,7 @@ var passId = document.getElementById("passId");
 var card = document.getElementById("Card");
 
 diceClick.addEventListener('click', paste);
-clip.addEventListener("click", copyCall);
+clip.addEventListener("click", copy);
 
 range.oninput = popRange;
 
@@ -102,7 +102,7 @@ popRange();
 
 let settingPopUp = document.getElementById('settings');
 
-settingPopUp.addEventListener('click', ()=> {
+settingPopUp.addEventListener('click', () => {
   let settingRot = document.getElementById('toRs');
   let settScale = document.getElementById('scale');
   let settHeight = document.getElementById('height');
@@ -222,15 +222,26 @@ function updateList() {
 
 
     str += `
-             <ol class="ol"${index + 1}>
+             <ol class="ol" ${index+1} id='thisId'>
              <li class="elOne">${element[0]}</li>
              <li class="elTwo">${element[1]}</li>
              <input class="elThi" id='thisCopy'value='${element[2]}' readonly>
+             <div class="eyeCopy">
+              <div class="eye" id='theEye'>
+              <i class='fa fa-eye'></i>
+              </div>
+              <div class="eye" id='theEye'>
+              <i class='fa fa-clipboard'></i>
+              </div>
+              <div class="eye" id='theEye' onclick='deleteThis(${index+1})'>
+              <i class='fa fa-trash'></i>
+              </div>
+             </div>
              <div class="line"></div>
              </ol>
               `
   });
- // mainBody.innerHTML = str;
+  mainBody.innerHTML = str;
 }
 
 let elThiPassInn = document.querySelectorAll('.elThi');
@@ -239,7 +250,7 @@ let elThiPassInn = document.querySelectorAll('.elThi');
 for (const eleThi of elThiPassInn) {
   eleThi.addEventListener('click', () => {
     alert(eleThi.value)
-    
+
     var copyText = eleThi;
     copyText.select();
     copyText.setSelectionRange(0, 9999);
@@ -247,11 +258,10 @@ for (const eleThi of elThiPassInn) {
   })
 }
 
-
-
 function copyCall() {
+  alert(1)
   if (passId.value == '') {
-    textAlDiv.classList.add('calNot');
+    /* textAlDiv.classList.add('calNot');
     textAle.innerHTML = "Please Generate A Password First.";
     setTimeout(() => {
       textAlDiv.classList.remove('calNot');
@@ -259,55 +269,56 @@ function copyCall() {
   }
   else {
     card.classList.add('copyCard');
+  }*/
   }
 }
 
 function nopeCard() {
-  card.classList.remove('copyCard');
+  // card.classList.remove('copyCard');
 }
 
 function copy() {
   var radCheck = document.getElementById('checkNot');
-  if (radCheck.checked) {
-    var copyText = passId;
-    copyText.select();
-    copyText.setSelectionRange(0, 9999);
-    document.execCommand("copy");
+  //  if (radCheck.checked) {
+  /* var copyText = passId;
+   copyText.select();
+   copyText.setSelectionRange(0, 9999);
+   document.execCommand("copy");
 
-    passId.blur();
+   passId.blur();
 
-    card.classList.remove('copyCard');
+   card.classList.remove('copyCard');
 
-    textAlDiv.classList.add('calNot');
+   textAlDiv.classList.add('calNot');
 
-    textAle.innerHTML = "Password Copied But Not Saved.";
+   textAle.innerHTML = "Password Copied But Not Saved.";
 
-    setTimeout(() => {
+   setTimeout(() => {
+     textAlDiv.classList.remove('calNot');
+   }, 2000)*/
+
+  //  }
+  //  else {
+  alert(confirm("Yow want to copy -" + passId.value));
+  var copyText = passId;
+  copyText.select();
+  copyText.setSelectionRange(0, 9999);
+  document.execCommand("copy");
+
+  passId.blur();
+  getThePassword()
+
+  /*   card.classList.remove('copyCard');
+
+     textAlDiv.classList.add('calNot');
+
+     textAle.innerHTML = "Password Copied And Saved.";*/
+
+  /*  setTimeout(() => {
       textAlDiv.classList.remove('calNot');
-    }, 2000)
+    }, 2000)*/
 
-  }
-  else {
-    //alert(confirm("Yow want to copy -" + passId.value));
-    var copyText = passId;
-    copyText.select();
-    copyText.setSelectionRange(0, 9999);
-    document.execCommand("copy");
-
-    passId.blur();
-    getThePassword()
-
-    card.classList.remove('copyCard');
-
-    textAlDiv.classList.add('calNot');
-
-    textAle.innerHTML = "Password Copied And Saved.";
-
-    setTimeout(() => {
-      textAlDiv.classList.remove('calNot');
-    }, 2000)
-
-  }
+  // }
 }
 
 
