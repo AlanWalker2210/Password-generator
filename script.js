@@ -222,7 +222,7 @@ function updateList() {
 
 
     str += `
-             <ol class="ol" ${index+1} id='thisId'>
+             <ol class="ol" ${index+1}id='thisId'>
              <li class="elOne">${element[0]}</li>
              <li class="elTwo">${element[1]}</li>
              <input class="elThi" id='thisCopy'value='${element[2]}' readonly>
@@ -232,9 +232,6 @@ function updateList() {
               </div>
               <div class="eye" id='theEye'>
               <i class='fa fa-clipboard'></i>
-              </div>
-              <div class="eye" id='theEye' onclick='deleteThis(${index+1})'>
-              <i class='fa fa-trash'></i>
               </div>
              </div>
              <div class="line"></div>
@@ -258,15 +255,16 @@ for (const eleThi of elThiPassInn) {
   })
 }
 
+
 function copyCall() {
-  alert(1)
+ // alert(1)
   if (passId.value == '') {
     /* textAlDiv.classList.add('calNot');
     textAle.innerHTML = "Please Generate A Password First.";
     setTimeout(() => {
       textAlDiv.classList.remove('calNot');
     }, 2000)
-  }
+  };
   else {
     card.classList.add('copyCard');
   }*/
@@ -299,7 +297,7 @@ function copy() {
 
   //  }
   //  else {
-  alert(confirm("Yow want to copy -" + passId.value));
+//  alert(confirm("Yow want to copy -" + passId.value));
   var copyText = passId;
   copyText.select();
   copyText.setSelectionRange(0, 9999);
