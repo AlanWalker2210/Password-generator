@@ -225,13 +225,16 @@ function updateList() {
              <ol class="ol" ${index+1}id='thisId'>
              <li class="elOne">${element[0]}</li>
              <li class="elTwo">${element[1]}</li>
-             <input class="elThi" id='thisCopy'value='${element[2]}' readonly>
+             <input class="elThi" id='thisCopy'value='${element[2]}' type='text' readonly>
              <div class="eyeCopy">
               <div class="eye" id='theEye'>
               <i class='fa fa-eye'></i>
               </div>
               <div class="eye" id='theEye'>
               <i class='fa fa-clipboard'></i>
+              </div>
+              <div class='eye' onclick='deleteTask(${index})'>
+                <i class='fa fa-trash'></i>
               </div>
              </div>
              <div class="line"></div>
@@ -240,6 +243,17 @@ function updateList() {
   });
   mainBody.innerHTML = str;
 }
+function deleteTask(itemIndex) {
+      thisArray.sort()
+      thisArraystr = localStorage.getItem('itemsJson');
+      thisArray = JSON.parse(thisArraystr);
+      if (confirm("Do you want to Delete?")) {
+        thisArray.splice(itemIndex, 1);
+      }
+      localStorage.setItem('itemsJson', JSON.stringify(thisArray));
+
+      updateList();
+    }
 
 let elThiPassInn = document.querySelectorAll('.elThi');
 
