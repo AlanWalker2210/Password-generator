@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap');
 
 @font-face {
   font-family: Elegant;
@@ -23,7 +22,6 @@ body {
   background: -webkit-linear-gradient(45deg, #7782FF, #77FFE8);
   -webkit-background-clip: text;
   background-position: center;
-  font-family: Mukta;
   font-weight: 700;
   animation: hueRot 55s linear infinite;
 }
@@ -72,7 +70,9 @@ body {
   /*background: linear-gradient(90deg ,#000 90%,#8C8C8C 100%);*/
   backdrop-filter: blur(2px);
 }
-
+#thisCopy {
+  color: #000;
+}
 .allBtnSect-m {
   width: 100%;
   height: 60px;
