@@ -70,6 +70,10 @@ body {
   /*background: linear-gradient(90deg ,#000 90%,#8C8C8C 100%);*/
   backdrop-filter: blur(2px);
 }
+.anotherInputToCopy {
+  opacity: 0;
+  pointer-events: none;
+}
 #thisCopy {
   color: #000;
 }
@@ -220,7 +224,10 @@ body {
   background: #f00;
 }
 .eye {
-  margin-top: -50px;
+  margin: -50px 10px 0 10px;
+}
+#thisId {
+  margin: 10px 0 10px 0px;
 }
 /*.bgImg {
   color: #FFFFFFC2;

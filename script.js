@@ -222,19 +222,19 @@ function updateList() {
 
 
     str += `
-             <ol class="ol" ${index+1}id='thisId'>
+             <ol class="ol" id='thisId' ${index+1}>
              <li class="elOne">${element[0]}</li>
              <li class="elTwo">${element[1]}</li>
-             <input class="elThi" id='thisCopy'value='${element[2]}' type='text' readonly>
+             <input class="elThi" id='thisCopy' value='${element[2]}' type='password'/>
              <div class="eyeCopy">
-              <div class="eye" id='theEye'>
-              <i class='fa fa-eye'></i>
+              <div class="eye" id='theEye' onclick='passTypeChange(${index})'>
+              <i class='fa fa-eye'>i</i>
               </div>
-              <div class="eye" id='theEye'>
-              <i class='fa fa-clipboard'></i>
+              <div class="eye" id='theEye' onclick='runCopy(${index})'>
+              <i class='fa fa-clipboard'>c</i>
               </div>
               <div class='eye' onclick='deleteTask(${index})'>
-                <i class='fa fa-trash'></i>
+                <i class='fa fa-trash'>d</i>
               </div>
              </div>
              <div class="line"></div>
@@ -243,35 +243,51 @@ function updateList() {
   });
   mainBody.innerHTML = str;
 }
-function deleteTask(itemIndex) {
-      thisArray.sort()
-      thisArraystr = localStorage.getItem('itemsJson');
-      thisArray = JSON.parse(thisArraystr);
-      if (confirm("Do you want to Delete?")) {
-        thisArray.splice(itemIndex, 1);
-      }
-      localStorage.setItem('itemsJson', JSON.stringify(thisArray));
 
-      updateList();
+function passTypeChange(element) {
+  
+  let elThi = document.querySelectorAll('.elThi');
+  
+    let passField = 'password';
+    let textField = 'text';
+    
+    if(elThi[element].type === 'text') {
+      elThi[element].type = passField;
     }
+    else {
+      elThi[element].type = textField;
+    }
+}
+
+function deleteTask(itemIndex) {
+  thisArray.sort()
+  thisArraystr = localStorage.getItem('itemsJson');
+  thisArray = JSON.parse(thisArraystr);
+  if (confirm("Do you want to Delete?")) {
+    thisArray.splice(itemIndex, 1);
+  }
+  localStorage.setItem('itemsJson', JSON.stringify(thisArray));
+
+  updateList();
+}
 
 let elThiPassInn = document.querySelectorAll('.elThi');
 
 
-for (const eleThi of elThiPassInn) {
-  eleThi.addEventListener('click', () => {
-    alert(eleThi.value)
+function runCopy(index) {
+  let parent = document.getElementById('parent');
+  parent.value = thisArray[index][2];
 
-    var copyText = eleThi;
-    copyText.select();
-    copyText.setSelectionRange(0, 9999);
-    document.execCommand("copy");
-  })
+  var copyText = parent;
+  copyText.select();
+  copyText.setSelectionRange(0, 9999);
+  document.execCommand("copy");
+
+  parent.blur();
 }
 
-
 function copyCall() {
- // alert(1)
+  // alert(1)
   if (passId.value == '') {
     /* textAlDiv.classList.add('calNot');
     textAle.innerHTML = "Please Generate A Password First.";
@@ -311,7 +327,7 @@ function copy() {
 
   //  }
   //  else {
-//  alert(confirm("Yow want to copy -" + passId.value));
+  //  alert(confirm("Yow want to copy -" + passId.value));
   var copyText = passId;
   copyText.select();
   copyText.setSelectionRange(0, 9999);
