@@ -3,8 +3,8 @@ let btnMover = document.querySelectorAll(".switch-s");
 const diceClick = document.getElementById("dice");
 let range = document.getElementById("range");
 const clip = document.getElementById("clipboard");
-var passId = document.getElementById("passId");
-var card = document.getElementById("Card");
+let passId = document.getElementById("passId");
+let card = document.getElementById("Card");
 
 diceClick.addEventListener('click', paste);
 clip.addEventListener("click", copy);
@@ -98,7 +98,7 @@ btnSelector[5].onclick = function() {
   btnSelector[4].classList.remove("switch-bg");
 }
 
-popRange();
+//popRange();
 
 let settingPopUp = document.getElementById('settings');
 
@@ -116,19 +116,47 @@ function popRange() {
   for (var i = 0; i < 301; i++) {
     if (range.value == i) {
       rangeMeter.innerHTML = i;
-       
-       if(range.value < 9) {
-         document.body.style.backgroundColor = '#D2364E';
-       }
-       else if(range.value > 11 && range.value < 18) {
-         document.body.style.backgroundColor = '#B95140';
-       }
-       else if(range.value > 17) {
-         document.body.style.backgroundColor = '#1E7E5A';
-       }
+
+      let spanIconGrab = document.getElementById('shield');
+      let suggestion = document.getElementById('suggestion');
+
+      if (range.value < 9) {
+        document.body.style.backgroundColor = '#D2364E';
+        spanIconGrab.innerHTML = 'gpp_bad';
+        suggestion.innerHTML = 'Weak Password';
+      }
+      else if (range.value > 11 && range.value < 18) {
+        document.body.style.backgroundColor = '#B95140';
+        spanIconGrab.innerHTML = 'privacy_tip';
+        suggestion.innerHTML = 'Fairly Strong Password';
+      }
+      else if (range.value > 17 && range.value < 20) {
+        document.body.style.backgroundColor = '#1E7E5A';
+        spanIconGrab.innerHTML = 'verified_user';
+        suggestion.innerHTML = 'Strong Password';
+      }
+      else if (range.value > 20) {
+        document.body.style.backgroundColor = '#1E7E5A';
+        spanIconGrab.innerHTML = 'verified_user';
+        suggestion.innerHTML = 'Very Strong Password';
+      }
     }
   }
+  passId.value = generate();
+  
+  if (passId.value === '') {
+    let disSecure = document.getElementById('disSecure');
+
+    disSecure.style.opacity = '0';
+  }
+  else {
+    let disSecure = document.getElementById('disSecure');
+
+    disSecure.style.opacity = '1';
+  }
 }
+  passId.value = generate();
+    disSecure.style.opacity = '1';
 
 function generate() {
   var pass = '';
@@ -192,6 +220,17 @@ function paste() {
     toR.classList.remove("rotate");
   }, 300)
   passId.value = generate();
+
+  if (passId.value === '') {
+    let disSecure = document.getElementById('disSecure');
+
+    disSecure.style.opacity = '0';
+  }
+  else {
+    let disSecure = document.getElementById('disSecure');
+
+    disSecure.style.opacity = '1';
+  }
 }
 
 updateList()
@@ -261,17 +300,17 @@ content_copy
 }
 
 function passTypeChange(element) {
-  
+
   let thisTypeIcon = document.querySelectorAll('.thisTypeIcon');
-  
-  
-  if(thisTypeIcon[element].innerHTML === 'visibility_off') {
-      thisTypeIcon[element].innerHTML = 'visibility';
+
+
+  if (thisTypeIcon[element].innerHTML === 'visibility_off') {
+    thisTypeIcon[element].innerHTML = 'visibility';
   }
   else {
-      thisTypeIcon[element].innerHTML = 'visibility_off';
+    thisTypeIcon[element].innerHTML = 'visibility_off';
   }
-  
+
   let elThi = document.querySelectorAll('.elThi');
 
   let passField = 'password';
@@ -303,9 +342,9 @@ let elThiPassInn = document.querySelectorAll('.elThi');
 function runCopy(index) {
   let parent = document.getElementById('parent');
   parent.value = thisArray[index][2];
-  
+
   let changeCopy = document.querySelectorAll('.thisCopyIcon');
-  
+
   changeCopy[index].innerHTML = 'done';
 
   var copyText = parent;

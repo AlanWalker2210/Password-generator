@@ -43,7 +43,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .borderLine-s {
@@ -79,6 +79,20 @@ p {
   font-weight: bold;
   letter-spacing: 1px;
   color: #fff;
+}
+#passId {
+  font-size: 1.1rem;
+}
+.secureTip {
+  display: flex;
+  margin: -10px 0 40px 0;
+  justify-content: flex-start;
+  align-items: center;
+  opacity: 0;
+  transition: 0.8s;
+}
+.margShield {
+  margin: 0 0 0 20px;
 }
 ::placeholder {
   color: #BFBFBF;
@@ -204,7 +218,7 @@ p {
   box-shadow: .1px .1px 2px #000;
 }
 .switch-bg {
-  background: #96E93D;
+  background: #07A62F;
 }
 .switchMove {
   margin: 0 0 0 22px;

@@ -14,10 +14,17 @@
 <body>
   <header role="Title Holder">
     <div class=thisTitleHolder>
-      <h1 class="thisTitle">
-        BytePass
-      </h1>
-      <p>FOSS Password Generator</p>
+      <div class="navBar">
+        
+      </div>
+      <div class="h1">
+        <h1 class="thisTitle">
+          BytePass
+        </h1>
+      </div>
+      <div class="p">
+        <p>FOSS Password Generator</p>
+      </div>
     </div>
   </header>
   <input type="text" class="anotherInputToCopy" value="" id="parent">
@@ -29,10 +36,15 @@
           <input class="inpApp" type="text" placeholder="Username (optional)" id="nameId">
         </div>
         <div class="inputPassField">
-          <input class="inpApp" type="text" placeholder="Your Password Will Generate Here" id="passId">
+          <input class="inpApp" type="text" placeholder="Password" id="passId">
         </div>
-        <div class="secureTip">
-          
+        <div class="secureTip" id="disSecure">
+          <span class="material-symbols-rounded margShield" id="shield">
+            verified_user
+          </span>
+          <span id="suggestion">
+            Strong Password.
+          </span>
         </div>
       </div>
     </div>
