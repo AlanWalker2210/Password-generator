@@ -116,6 +116,16 @@ function popRange() {
   for (var i = 0; i < 301; i++) {
     if (range.value == i) {
       rangeMeter.innerHTML = i;
+       
+       if(range.value < 9) {
+         document.body.style.backgroundColor = '#D2364E';
+       }
+       else if(range.value > 11 && range.value < 18) {
+         document.body.style.backgroundColor = '#B95140';
+       }
+       else if(range.value > 17) {
+         document.body.style.backgroundColor = '#1E7E5A';
+       }
     }
   }
 }
@@ -225,16 +235,22 @@ function updateList() {
              <ol class="ol" id='thisId' ${index+1}>
              <li class="elOne">${element[0]}</li>
              <li class="elTwo">${element[1]}</li>
-             <input class="elThi" id='thisCopy' value='${element[2]}' type='password'/>
+             <input class="elThi" id='thisCopy' value='${element[2]}' type='password' readonly/>
              <div class="eyeCopy">
               <div class="eye" id='theEye' onclick='passTypeChange(${index})'>
-              <i class='fa fa-eye'>i</i>
+              <span class="material-symbols-rounded thisWhite thisTypeIcon">
+visibility
+</span>
               </div>
               <div class="eye" id='theEye' onclick='runCopy(${index})'>
-              <i class='fa fa-clipboard'>c</i>
+              <span class="material-symbols-rounded thisWhite thisCopyIcon" id='changeClip'>
+content_copy
+</span>
               </div>
               <div class='eye' onclick='deleteTask(${index})'>
-                <i class='fa fa-trash'>d</i>
+              <span class="material-symbols-rounded thisWhite">
+              delete
+              </span>
               </div>
              </div>
              <div class="line"></div>
@@ -246,17 +262,27 @@ function updateList() {
 
 function passTypeChange(element) {
   
-  let elThi = document.querySelectorAll('.elThi');
+  let thisTypeIcon = document.querySelectorAll('.thisTypeIcon');
   
-    let passField = 'password';
-    let textField = 'text';
-    
-    if(elThi[element].type === 'text') {
-      elThi[element].type = passField;
-    }
-    else {
-      elThi[element].type = textField;
-    }
+  
+  if(thisTypeIcon[element].innerHTML === 'visibility_off') {
+      thisTypeIcon[element].innerHTML = 'visibility';
+  }
+  else {
+      thisTypeIcon[element].innerHTML = 'visibility_off';
+  }
+  
+  let elThi = document.querySelectorAll('.elThi');
+
+  let passField = 'password';
+  let textField = 'text';
+
+  if (elThi[element].type === 'text') {
+    elThi[element].type = passField;
+  }
+  else {
+    elThi[element].type = textField;
+  }
 }
 
 function deleteTask(itemIndex) {
@@ -277,6 +303,10 @@ let elThiPassInn = document.querySelectorAll('.elThi');
 function runCopy(index) {
   let parent = document.getElementById('parent');
   parent.value = thisArray[index][2];
+  
+  let changeCopy = document.querySelectorAll('.thisCopyIcon');
+  
+  changeCopy[index].innerHTML = 'done';
 
   var copyText = parent;
   copyText.select();

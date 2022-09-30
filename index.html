@@ -8,14 +8,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 </head>
 <link href="style.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
 
 <body>
   <header role="Title Holder">
-    <div>
+    <div class=thisTitleHolder>
       <h1 class="thisTitle">
-        Generate Random <br> Password
+        BytePass
       </h1>
+      <p>FOSS Password Generator</p>
     </div>
   </header>
   <input type="text" class="anotherInputToCopy" value="" id="parent">
@@ -24,10 +26,13 @@
     <div class="borderLine-m">
       <div class="borderLine-s">
         <div class="inputAppName">
-          <input class="inpApp" type="text" placeholder="Username" id="nameId">
+          <input class="inpApp" type="text" placeholder="Username (optional)" id="nameId">
         </div>
         <div class="inputPassField">
           <input class="inpApp" type="text" placeholder="Your Password Will Generate Here" id="passId">
+        </div>
+        <div class="secureTip">
+          
         </div>
       </div>
     </div>
@@ -37,13 +42,19 @@
     <div class="allBtnSect-m">
       <div class="allBtnSect-s">
         <button class="btn" id="dice">
-          <i class="fa fa-repeat" id="toR"></i>
+          <span class="material-symbols-rounded" id="toR">
+            autorenew
+          </span>
         </button>
         <button class="btn" id="settings">
-          <i class="fa fa-gear" id="toRs"></i>
+          <span class="material-symbols-rounded" id="toRs">
+            settings
+          </span>
         </button>
         <button class="btn" id="clipboard">
-          <i class="fa fa-clipboard rotate"></i>
+          <span class="material-symbols-rounded">
+            content_copy
+          </span>
         </button>
       </div>
     </div>
