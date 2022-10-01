@@ -45,28 +45,32 @@
       <div class="nav-m" id="thisNav">
         <div class="nav-s">
           <div class="viewMyCode a">
-            <a href="https://github.com/panchalbhavya2210/Password-generator">
-            <span class="material-symbols-rounded aIcon">
-              code
-            </span>
-            <span class="margSpan"> &nbsp;&nbsp;View This Website's Code</span>
+            <a href="https://github.com/panchalbhavya2210/Password-generator" target="_blank">
+              <span class="material-symbols-rounded aIcon">
+                code
+              </span>
+              <span class="margSpan"> &nbsp;&nbsp;View This Website's Code</span>
             </a>
           </div>
           <div class="viewMyCode a">
-            <span class="material-symbols-rounded aIcon">
-              equalizer
-            </span>
-            <span class="">
-              &nbsp;&nbsp;Visit v2.0.0
-            </span>
+            <a href="https://randompass.epizy.com/v2.html" target="_blank">
+              <span class="material-symbols-rounded aIcon">
+                equalizer
+              </span>
+              <span class="">
+                &nbsp;&nbsp;Visit v2.0.0
+              </span>
+            </a>
           </div>
           <div class="viewMyCode a">
-            <span class="material-symbols-rounded aIcon">
-              equalizer
-            </span>
-            <span>
-              &nbsp;&nbsp;Visit v1.0.0
-            </span>
+            <a href="https://randompass.epizy.com/v1.html">
+              <span class="material-symbols-rounded aIcon" target="_blank">
+                equalizer
+              </span>
+              <span>
+                &nbsp;&nbsp;Visit v1.0.0
+              </span>
+            </a>
           </div>
           <div class="viewMyCode a">
             <span class="material-symbols-rounded aIcon">
@@ -118,6 +122,11 @@
           <button class="btn" id="clipboard">
             <span class="material-symbols-rounded">
               content_copy
+            </span>
+          </button>
+          <button class="btn" id="purge">
+            <span class="material-symbols-rounded">
+              delete_forever
             </span>
           </button>
         </div>
@@ -226,159 +235,31 @@
       </div>
     </section>
   </section>
-  <!-- <h1 class="bgImg">Generate Random <br>Password</h1><br>
-
-  <div class="nameField">
-    <input type="text" placeholder="Enter A Name" id="nameId" class="nameFieldInp inp">
-  </div>
-  <div class="passField">
-    <input type="text" placeholder="Click the dice..." id="passId" class="passFieldInp inp">
-  </div>
-
-  <div class="copyPass">
-    <div class="btnSec">
-      <div class="btnOne" id="dice">
-        <i class= "fa fa-repeat" id="toR"></i>
-      </div>
-      <div class="btnOne" id="clipboard">
-        <i class="fa fa-clipboard rotate"></i>
-      </div>
-    </div>
-  </div>
-
-  <div class="settingDiv-m">
-    <div class="settingDiv-s">
-      <div class="inpRange">
-        <div class="minus" onclick="minus()">
-          <img src="/icons/dash-lg.svg">
-        </div>
-        <input type="range" max="300" min="6" class="inpRange" id="range" value="18" id="range">
-        <div class="plus" onclick="plus()">
-          <img src="/icons/plus.svg">
-        </div>
-        <div class="inpValue">
-          <text id="rangeMeter">18</text>
-        </div>
-      </div>
-      <div class="line"></div>
-
-      <div class="secOne">
-        <div class="switch-m">
-          <div class="switch-s"></div>
-        </div>
-        <text class="t">Symbols</text>
-      </div>
-      <div class="secOne">
-        <div class="switch-m">
-          <div class="switch-s"></div>
-        </div>
-        <text class="t">Only Lowercase</text>
-      </div>
-
-      <div class="secOne">
-        <div class="switch-m">
-          <div class="switch-s"></div>
-        </div>
-        <text class="t">Only Uppercase</text>
-      </div>
-
-      <div class="secOne">
-        <div class="switch-m">
-          <div class="switch-s"></div>
-        </div>
-        <text class="t">Lowercase & Symbols</text>
-      </div>
-
-      <div class="secOne">
-        <div class="switch-m">
-          <div class="switch-s"></div>
-        </div>
-        <text class="t">Uppercase & Symbols</text>
-      </div>
-
-      <div class="secOne">
-        <div class="switch-m">
-          <div class="switch-s"></div>
-        </div>
-        <text class="t">Only Number</text>
-      </div>
-    </div>
-  </div>
-
-  <div class="historyBtn" onclick="showHistory()">
-    <i class="fa fa-history"></i>
-  </div>
-
-  <div class="historySection-m" id="histM">
-    <div class="historySection-s" id="histS">
-      <button onclick="clearLocal()">Delete All Stored Passwords</button>
-      <div id="mainBody"></div>
-    </div>
-  </div>
-
-  <div class="navBtn" onclick="callNav()">
-    <div class="barOne"></div>
-    <div class="barTwo"></div>
-    <div class="barThi"></div>
-  </div>
-
-  <div class="navBar" id="nav">
-    <div class="head">
-      <text>Password Generator</text>
-    </div>
-    <div class="viewCode">
-      <i class="fa fa-github"></i><a href="https://github.com/AlanWalker2210/Password-generator">View Code On Github</a>
-    </div>
-    <div class="vDiv">
-      <text>v2.0.1</text>
-      <br>
-      <text>Last update : 19-06-2022</text>
-    </div>
-  </div>
-  <div class="modal" id="navM"></div>
-
-  <div class="alertDeleteM" id="delCall">
-    <div class="alertDeleteS">
-      <div class="txtDel">
-        Are You Sure? This Action Can Not Be Reversed.
-      </div>
-      <div class="btnAction">
-        <div class="btnActionF">
-          <button id="delSure" onclick="yup()">Yes</button>
-        </div>
-        <div class="btnActionS">
-          <button id="noSure" onclick="nope()">No</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="rightActM" id="rightCall">
-    <div class="rightActS">
-      <text>✓</text>
-    </div>
-  </div>
-
-  <div class="doYouM" id="Card">
-    <div class="doYouS">
-      <div class="doYouQu">
-        Do You Want To Copy This Password?
-      </div>
-      <div class="doNotSave">
-        <input type="checkbox" id="checkNot"> Do Not Save This Password.
-      </div>
-      <div class="btnSection">
-        <button id="yCopy" onclick="copy()">Yes</button>
-        <button id="nCopy" onclick="nopeCard()">No</button>
-      </div>
-    </div>
-  </div>
   
-  <div class="copyOrNotM" id="textAlDiv">
-    <div class="copyOrNotS">
-      <p id="textAle">Password Copied.</p>
+  <section role="delete-forever">
+    <div class="deleteForeverWarn-m" id="callPurge">
+      <div class="deleteForeverWarn-s">
+        <div class="exclamationMark">
+          <div class="mark">
+            !
+          </div>
+        </div>
+        <div class="textField">
+          Do you want to delete all stored passwords?
+          <br>
+          This action cannot be reversed.
+        </div>
+        <div class="buttonField">
+          <button class="styleBtn" id="cancelPurge">
+            Cancel
+          </button>
+          <button class="styleBtn" id="purgeRn">
+            Delete All&nbsp;<span id="purgeTimeOut">5s</span>
+          </button>
+        </div>
+      </div>
     </div>
-  </div>-->
+  </section>
 
   <script type="text/javascript" src="script.js"></script>
 </body>

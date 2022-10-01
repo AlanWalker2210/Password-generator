@@ -127,31 +127,31 @@ function popRange() {
 
       let spanIconGrab = document.getElementById('shield');
       let suggestion = document.getElementById('suggestion');
-     // let thisNav = document.getElementById('thisNav');
+      // let thisNav = document.getElementById('thisNav');
 
       if (range.value < 9) {
         document.body.style.backgroundColor = '#D2364E';
         spanIconGrab.innerHTML = 'gpp_bad';
         suggestion.innerHTML = 'Weak Password';
-      //  thisNav.style.backgroundColor = '#D2364E';
+        //  thisNav.style.backgroundColor = '#D2364E';
       }
       else if (range.value > 11 && range.value < 18) {
         document.body.style.backgroundColor = '#B95140';
         spanIconGrab.innerHTML = 'privacy_tip';
         suggestion.innerHTML = 'Fairly Strong Password';
-      //  thisNav.style.backgroundColor = '#B95140';
+        //  thisNav.style.backgroundColor = '#B95140';
       }
       else if (range.value > 17 && range.value < 20) {
         document.body.style.backgroundColor = '#1E7E5A';
         spanIconGrab.innerHTML = 'verified_user';
         suggestion.innerHTML = 'Strong Password';
-      //  thisNav.style.backgroundColor = '#1E7E5A';
+        //  thisNav.style.backgroundColor = '#1E7E5A';
       }
       else if (range.value > 20) {
         document.body.style.backgroundColor = '#3A6ABC';
         spanIconGrab.innerHTML = 'verified_user';
         suggestion.innerHTML = 'Very Strong Password';
-      //  thisNav.style.backgroundColor = '#3A6ABC';
+        //  thisNav.style.backgroundColor = '#3A6ABC';
       }
     }
   }
@@ -368,68 +368,57 @@ function runCopy(index) {
   parent.blur();
 }
 
-function copyCall() {
-  // alert(1)
-  if (passId.value == '') {
-    /* textAlDiv.classList.add('calNot');
-    textAle.innerHTML = "Please Generate A Password First.";
-    setTimeout(() => {
-      textAlDiv.classList.remove('calNot');
-    }, 2000)
-  };
-  else {
-    card.classList.add('copyCard');
-  }*/
-  }
-}
+let purgeBtn = document.getElementById('purge');
 
-function nopeCard() {
-  // card.classList.remove('copyCard');
-}
+purgeBtn.addEventListener('click', () => {
+  let callPurge = document.getElementById('callPurge');
+  let purgeRn = document.getElementById('purgeRn');
 
-function copy() {
-  var radCheck = document.getElementById('checkNot');
-  //  if (radCheck.checked) {
-  /* var copyText = passId;
-   copyText.select();
-   copyText.setSelectionRange(0, 9999);
-   document.execCommand("copy");
+  callPurge.classList.add('transpurge')
 
-   passId.blur();
+  purgeRn.disabled = true;
 
-   card.classList.remove('copyCard');
+  let purgeEnable = 5;
 
-   textAlDiv.classList.add('calNot');
+  let interval = setInterval(() => {
+    purgeEnable--;
+    let purgeTimeOut = document.getElementById('purgeTimeOut');
 
-   textAle.innerHTML = "Password Copied But Not Saved.";
+    purgeTimeOut.innerHTML = purgeEnable + 's';
+    purgeTimeOut.style.opacity = '1';
 
-   setTimeout(() => {
-     textAlDiv.classList.remove('calNot');
-   }, 2000)*/
+    if (purgeEnable == 0) {
+      purgeRn.disabled = false;
+      purgeTimeOut.style.opacity = '0';
+    }
 
-  //  }
-  //  else {
-  //  alert(confirm("Yow want to copy -" + passId.value));
-  var copyText = passId;
-  copyText.select();
-  copyText.setSelectionRange(0, 9999);
-  document.execCommand("copy");
+    if (purgeEnable <= 0) {
+      clearInterval(interval)
+    }
 
-  passId.blur();
-  getThePassword()
+  }, 1000)
+})
 
-  /*   card.classList.remove('copyCard');
+let purgeRn = document.getElementById('purgeRn');
 
-     textAlDiv.classList.add('calNot');
+purgeRn.addEventListener('click', () => {
+  localStorage.clear()
+  
+  updateList();
+  let callPurge = document.getElementById('callPurge');
+  callPurge.classList.remove('transpurge')
 
-     textAle.innerHTML = "Password Copied And Saved.";*/
+})
 
-  /*  setTimeout(() => {
-      textAlDiv.classList.remove('calNot');
-    }, 2000)*/
+let cancelPurge = document.getElementById('cancelPurge');
 
-  // }
-}
+cancelPurge.addEventListener('click', () => {
+  let callPurge = document.getElementById('callPurge');
+  callPurge.classList.remove('transpurge')
+
+})
+
+
 
 function navCall() {
   let thisNav = document.getElementById('thisNav');
@@ -438,7 +427,7 @@ function navCall() {
   let bThi = document.getElementById('bThi');
 
   thisNav.classList.toggle('nav-tog');
-  
+
   bOne.classList.toggle('b1Tog');
   bThi.classList.toggle('b2Tog');
 }
@@ -454,52 +443,3 @@ function minus() {
 
   popRange();
 };
-
-function showHistory() {
-  histM.classList.toggle("h-m");
-  histS.classList.toggle("h-s");
-}
-
-function clearLocal() {
-  let docDel = document.getElementById("delCall");
-
-  docDel.classList.add('toCall');
-  /* if (confirm("This actions can not be reversed. Are you sure?")) {
-     localStorage.clear()
-   }
-   else {
-     undefined
-   }*/
-  updateList()
-}
-
-function yup() {
-  localStorage.clear();
-  updateList()
-
-  rightCall.classList.add('rightCall');
-
-  setTimeout(() => {
-    rightCall.classList.remove('rightCall');
-  }, 2000)
-
-  setTimeout(() => {
-    let docDel = document.getElementById("delCall");
-    docDel.classList.remove('toCall');
-  }, 10)
-}
-
-function nope() {
-  let docDel = document.getElementById("delCall");
-  docDel.classList.remove('toCall');
-}
-
-function callNav() {
-  nav.classList.add("navM");
-  navM.style.display = 'block';
-}
-/*navM.onclick = function() {
-  nav.classList.remove("navM");
-  navM.style.display = 'none';
-}
-*/
