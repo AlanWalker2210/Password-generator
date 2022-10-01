@@ -171,54 +171,54 @@ passId.value = generate();
 disSecure.style.opacity = '1';
 
 function generate() {
-  var pass = '';
-  var digit;
+  let pass = '';
+  let digit;
   if (btnMover[0].classList.contains("switchMove")) {
-    for (var i = 1; i <= range.value; i++) {
+    for (let i = 1; i <= range.value; i++) {
       digit = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz11223344556677889900@_-=:/!+@_-+:/?@@@____";
-      var char = Math.floor(Math.random() * digit.length);
+      let char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
   }
   else if (btnMover[1].classList.contains("switchMove")) {
-    for (var i = 1; i <= range.value; i++) {
+    for (let i = 1; i <= range.value; i++) {
       digit = "abcdefghijklmnopqrstuvwxyz";
-      var char = Math.floor(Math.random() * digit.length);
+      let char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
   }
   else if (btnMover[2].classList.contains("switchMove")) {
-    for (var i = 1; i <= range.value; i++) {
+    for (let i = 1; i <= range.value; i++) {
       digit = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-      var char = Math.floor(Math.random() * digit.length);
+      let char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
   }
   else if (btnMover[3].classList.contains("switchMove")) {
-    for (var i = 1; i <= range.value; i++) {
+    for (let i = 1; i <= range.value; i++) {
       digit = "abcdefghijklmnopqrstuvwxyz11223344556677889900@_-=:/!+@@&&";
-      var char = Math.floor(Math.random() * digit.length);
+      let char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
   }
   else if (btnMover[4].classList.contains("switchMove")) {
-    for (var i = 1; i <= range.value; i++) {
+    for (let i = 1; i <= range.value; i++) {
       digit = "ABCDEFGHIJKLMNOPQRSTUVWXYZ11223344556677889900@_-=:/!+@@&&";
-      var char = Math.floor(Math.random() * digit.length);
+      let char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
   }
   else if (btnMover[5].classList.contains("switchMove")) {
-    for (var i = 1; i <= range.value; i++) {
+    for (let i = 1; i <= range.value; i++) {
       digit = "11223344556677889900";
-      var char = Math.floor(Math.random() * digit.length);
+      let char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
   }
   else {
-    for (var i = 1; i <= range.value; i++) {
+    for (let i = 1; i <= range.value; i++) {
       digit = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-      var char = Math.floor(Math.random() * digit.length);
+      let char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
   }
@@ -226,7 +226,7 @@ function generate() {
 }
 
 function paste() {
-  var toR = document.getElementById("toR")
+  let toR = document.getElementById("toR")
   toR.classList.add("rotate");
   setTimeout(() => {
     toR.classList.remove("rotate");
@@ -248,11 +248,11 @@ function paste() {
 updateList()
 
 function getThePassword() {
-  var a = new Date();
-  var t = [a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds() + "&nbsp;" + a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear()];
+  let a = new Date();
+  let t = [a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds() + "&nbsp;" + a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear()];
 
-  var passInfo = document.getElementById("passId").value;
-  var passPort = nameId.value;
+  let passInfo = document.getElementById("passId").value;
+  let passPort = nameId.value;
 
   if (localStorage.getItem('itemsJson') == null) {
     thisArray = [];
@@ -359,36 +359,59 @@ function runCopy(index) {
 
   changeCopy[index].innerHTML = 'done';
 
-  var copyText = parent;
+  let copyText = parent;
   copyText.select();
   copyText.setSelectionRange(0, 9999);
   document.execCommand("copy");
 
   parent.blur();
 }
+
+let clipIcon = document.getElementById('clipboard');
+
+clipIcon.addEventListener('click', () => {
+  let callCopyCard = document.getElementById('thisIsCopy');
+
+  callCopyCard.classList.add('copyTogg');
+})
+
+let noCopy = document.getElementById('noCopy');
+
+noCopy.addEventListener('click', () => {
+  let callCopyCard = document.getElementById('thisIsCopy');
+
+  callCopyCard.classList.remove('copyTogg');
+})
+
 let copyCall = document.getElementById('copyCall');
 
-copyCall.addEventListener('click',()=> {
+copyCall.addEventListener('click', () => {
   let radCheck = document.getElementById('checkConsent');
-  
-  if(passId.value != '') {
-    if(radCheck.checked != true) {
+
+  if (passId.value != '') {
+    if (radCheck.checked != true) {
       let copyPass = passId;
       copyPass.select();
-      copyPass.setSelectionRange(0,9999);
+      copyPass.setSelectionRange(0, 9999);
       document.execCommand('copy');
-      
+
       getThePassword();
       passId.blur();
     }
     else {
       let copyPass = passId;
       copyPass.select();
-      copyPass.setSelectionRange(0,9999);
+      copyPass.setSelectionRange(0, 9999);
       document.execCommand('copy');
       passId.blur();
     }
   }
+
+  setTimeout(() => {
+    let callCopyCard = document.getElementById('thisIsCopy');
+
+    callCopyCard.classList.remove('copyTogg');
+  }, 0)
 })
 
 let purgeBtn = document.getElementById('purge');
@@ -426,7 +449,7 @@ let purgeRn = document.getElementById('purgeRn');
 
 purgeRn.addEventListener('click', () => {
   localStorage.clear()
-  
+
   updateList();
   let callPurge = document.getElementById('callPurge');
   callPurge.classList.remove('transpurge')
