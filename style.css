@@ -58,7 +58,7 @@ p {
   backdrop-filter: blur(5px);
 }
 .nav-tog {
-  height: 270px;
+  height: 380px;
 }
 .bOne {
   width: 30px;
@@ -522,4 +522,31 @@ a {
   width: 50px;
   height: 30px;
   border: none;
+}
+.alertCop-m {
+  width: 100%; 
+  height: 50px;
+  position: fixed;
+  top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.alertTogg{
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.alertCop-s {
+  width: 100px;
+  height: 30px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 20px;
 }

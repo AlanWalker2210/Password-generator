@@ -35,15 +35,25 @@
           <p>FOSS Password Generator</p>
         </div>
         <div class="personInfo">
-          <span class="material-symbols-rounded">
-            person
-          </span>
+          <a href="https://github.com/panchalbhavya2210" target="_blank">
+            <span class="material-symbols-rounded">
+              person
+            </span>
+          </a>
         </div>
       </div>
     </header>
     <nav>
       <div class="nav-m" id="thisNav">
         <div class="nav-s">
+          <div class="viewMyCode a">
+            <a href="https://panchalbhavya2210.github.io" target="_blank">
+              <span class="material-symbols-rounded aIcon">
+                heart_plus
+              </span>
+              <span class="margSpan"> &nbsp;&nbsp;Visit My Website</span>
+            </a>
+          </div>
           <div class="viewMyCode a">
             <a href="https://github.com/panchalbhavya2210/Password-generator" target="_blank">
               <span class="material-symbols-rounded aIcon">
@@ -80,6 +90,15 @@
               &nbsp;&nbsp;Current Version : v3.0.0
             </span>
           </div>
+          <div class="viewMyCode a">
+            <span class="material-symbols-rounded aIcon">
+              history
+            </span>
+            <span>
+              &nbsp;&nbsp;Last updated : 02/10/2022 00:46
+            </span>
+          </div>
+
         </div>
       </div>
     </nav>
@@ -235,7 +254,7 @@
       </div>
     </section>
   </section>
-  
+
   <section role="delete-forever">
     <div class="deleteForeverWarn-m" id="callPurge">
       <div class="deleteForeverWarn-s">
@@ -260,25 +279,31 @@
       </div>
     </div>
   </section>
-  
+
   <section role="copyPassword">
-   <div class="copySect-m" id="thisIsCopy">
-     <div class="copySect-s">
-       <div class="consent">
-         Do You Want To Copy This Password?
-       </div>
-       <div class="storeOrNot">
-         <input type="checkbox" id="checkConsent">&nbsp;Do Not Save This Password.
-       </div>
-       <div class="buttonsYorN">
-         <button class="no desBtn" id="noCopy">No</button>
-         <button class="yes desBtn" id="copyCall">Yes</button>
-       </div>
-     </div>
-   </div>
+    <div class="copySect-m" id="thisIsCopy">
+      <div class="copySect-s">
+        <div class="consent">
+          Do You Want To Copy This Password?
+        </div>
+        <div class="storeOrNot">
+          <input type="checkbox" id="checkConsent">&nbsp;Do Not Save This Password.
+        </div>
+        <div class="buttonsYorN">
+          <button class="no desBtn" id="noCopy">No</button>
+          <button class="yes desBtn" id="copyCall">Yes</button>
+        </div>
+      </div>
+    </div>
   </section>
-  
- 
+
+  <section role="copiedAlert">
+    <div class="alertCop-m" id="alertId">
+      <div class="alertCop-s">
+        Copied<span class="material-symbols-rounded">Done</span>
+      </div>
+    </div>
+  </section>
 
   <script type="text/javascript" src="script.js"></script>
 </body>
