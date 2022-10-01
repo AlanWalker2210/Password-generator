@@ -12,166 +12,219 @@
 <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
 
 <body>
-  <header role="Title Holder">
-    <div class=thisTitleHolder>
-      <div class="navBar">
-        
-      </div>
-      <div class="h1">
-        <h1 class="thisTitle">
-          BytePass
-        </h1>
-      </div>
-      <div class="p">
-        <p>FOSS Password Generator</p>
-      </div>
+  <div class="windLoad-m" id="letLoad">
+    <div class="windLoad-s">
+      <div class="windLoad-es"></div>
     </div>
-  </header>
-  <input type="text" class="anotherInputToCopy" value="" id="parent">
+  </div>
 
-  <section role="password-generator">
-    <div class="borderLine-m">
-      <div class="borderLine-s">
-        <div class="inputAppName">
-          <input class="inpApp" type="text" placeholder="Username (optional)" id="nameId">
+  <section class="letZoom" id="letZoom">
+    <header role="Title Holder">
+      <div class="thisTitleHolder" id="stickyNav">
+        <div class="navBar" id="rot" onclick="navCall()">
+          <div class="bOne" id="bOne"></div>
+          <div class="bOne" id="bTwo"></div>
+          <div class="bOne" id="bThi"></div>
         </div>
-        <div class="inputPassField">
-          <input class="inpApp" type="text" placeholder="Password" id="passId">
+        <div class="h1">
+          <h1 class="thisTitle">
+            BytePass
+          </h1>
         </div>
-        <div class="secureTip" id="disSecure">
-          <span class="material-symbols-rounded margShield" id="shield">
-            verified_user
-          </span>
-          <span id="suggestion">
-            Strong Password.
-          </span>
+        <div class="p">
+          <p>FOSS Password Generator</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section role="buttons">
-    <div class="allBtnSect-m">
-      <div class="allBtnSect-s">
-        <button class="btn" id="dice">
-          <span class="material-symbols-rounded" id="toR">
-            autorenew
-          </span>
-        </button>
-        <button class="btn" id="settings">
-          <span class="material-symbols-rounded" id="toRs">
-            settings
-          </span>
-        </button>
-        <button class="btn" id="clipboard">
+        <div class="personInfo">
           <span class="material-symbols-rounded">
-            content_copy
+            person
           </span>
-        </button>
+        </div>
       </div>
-    </div>
-  </section>
+    </header>
+    <nav>
+      <div class="nav-m" id="thisNav">
+        <div class="nav-s">
+          <div class="viewMyCode a">
+            <a href="https://github.com/panchalbhavya2210/Password-generator">
+            <span class="material-symbols-rounded aIcon">
+              code
+            </span>
+            <span class="margSpan"> &nbsp;&nbsp;View This Website's Code</span>
+            </a>
+          </div>
+          <div class="viewMyCode a">
+            <span class="material-symbols-rounded aIcon">
+              equalizer
+            </span>
+            <span class="">
+              &nbsp;&nbsp;Visit v2.0.0
+            </span>
+          </div>
+          <div class="viewMyCode a">
+            <span class="material-symbols-rounded aIcon">
+              equalizer
+            </span>
+            <span>
+              &nbsp;&nbsp;Visit v1.0.0
+            </span>
+          </div>
+          <div class="viewMyCode a">
+            <span class="material-symbols-rounded aIcon">
+              equalizer
+            </span>
+            <span>
+              &nbsp;&nbsp;Current Version : v3.0.0
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <input type="text" class="anotherInputToCopy" value="" id="parent">
 
-  <section role="settings">
-    <div class="settingDiv-m" id="height">
-      <div class="settingDiv-s" id="scale">
-        <div class="rangeBar">
-          <div class="rangeInputs">
-            <div class="minus" onclick="minus()">
-              <img src="/icons/dash-lg.svg">
-            </div>
-            <input type="range" max="300" min="6" class="inpRange" id="range" value="18" id="range">
-            <div class="plus" onclick="plus()">
-              <img src="/icons/plus.svg">
-            </div>
+    <section role="password-generator">
+      <div class="borderLine-m">
+        <div class="borderLine-s">
+          <div class="inputAppName">
+            <input class="inpApp" type="text" placeholder="Username (optional)" id="nameId">
           </div>
-          <div class="range-o-meter">
-            <text id="rangeMeter">18</text>
+          <div class="inputPassField">
+            <input class="inpApp" type="text" placeholder="Password" id="passId">
           </div>
-        </div>
-        <div class="lineBar"></div>
-        <div class="optionsDiv">
-          <div class="optionsOne border">
-            <div class="switchContainer">
-              <div class="switch-m">
-                <div class="switch-s"></div>
-              </div>
-            </div>
-            <div class="textT">
-              <p class="txtSubCol">#@&</p>
-              <p class="txtCol">Symbols</p>
-            </div>
-          </div>
-          <div class="optionsOne">
-            <div class="switchContainer">
-              <div class="switch-m">
-                <div class="switch-s"></div>
-              </div>
-            </div>
-            <div class="textT">
-              <p class="txtSubCol">abc</p>
-              <p class="txtCol">Lowercase</p>
-            </div>
-          </div>
-        </div>
-        <div class="optionsDiv">
-          <div class="optionsOne border">
-            <div class="switchContainer">
-              <div class="switch-m">
-                <div class="switch-s"></div>
-              </div>
-            </div>
-            <div class="textT">
-              <p class="txtSubCol">ABC</p>
-              <p class="txtCol">Uppercase</p>
-            </div>
-          </div>
-          <div class="optionsOne">
-            <div class="switchContainer">
-              <div class="switch-m">
-                <div class="switch-s"></div>
-              </div>
-            </div>
-            <div class="textT">
-              <p class="txtSubCol">abc + #@&</p>
-              <p class="txtColBig">Lowercase & symbols</p>
-            </div>
-          </div>
-        </div>
-        <div class="optionsDiv">
-          <div class="optionsOne border">
-            <div class="switchContainer">
-              <div class="switch-m">
-                <div class="switch-s"></div>
-              </div>
-            </div>
-            <div class="textT">
-              <p class="txtSubCol">ABC + @#&</p>
-              <p class="txtColBig">Uppercase + symbols</p>
-            </div>
-          </div>
-          <div class="optionsOne">
-            <div class="switchContainer">
-              <div class="switch-m">
-                <div class="switch-s"></div>
-              </div>
-            </div>
-            <div class="textT">
-              <p class="txtSubCol">123</p>
-              <p class="txtCol">Numbers</p>
-            </div>
+          <div class="secureTip" id="disSecure">
+            <span class="material-symbols-rounded margShield" id="shield">
+              verified_user
+            </span>
+            <span id="suggestion">
+              Strong Password.
+            </span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section role="password-history">
-    <div class="passHistory-m">
-      <div class="passHistory-s">
-        <div id="mainBody"></div>
+    <section role="buttons">
+      <div class="allBtnSect-m">
+        <div class="allBtnSect-s">
+          <button class="btn" id="dice">
+            <span class="material-symbols-rounded" id="toR">
+              autorenew
+            </span>
+          </button>
+          <button class="btn" id="settings">
+            <span class="material-symbols-rounded" id="toRs">
+              settings
+            </span>
+          </button>
+          <button class="btn" id="clipboard">
+            <span class="material-symbols-rounded">
+              content_copy
+            </span>
+          </button>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <section role="settings">
+      <div class="settingDiv-m" id="height">
+        <div class="settingDiv-s" id="scale">
+          <div class="rangeBar">
+            <div class="rangeInputs">
+              <div class="minus" onclick="minus()">
+                <img src="/icons/dash-lg.svg">
+              </div>
+              <input type="range" max="300" min="6" class="inpRange" id="range" value="18" id="range">
+              <div class="plus" onclick="plus()">
+                <img src="/icons/plus.svg">
+              </div>
+            </div>
+            <div class="range-o-meter">
+              <text id="rangeMeter">18</text>
+            </div>
+          </div>
+          <div class="lineBar"></div>
+          <div class="optionsDiv">
+            <div class="optionsOne border">
+              <div class="switchContainer">
+                <div class="switch-m">
+                  <div class="switch-s"></div>
+                </div>
+              </div>
+              <div class="textT">
+                <p class="txtSubCol">#@&</p>
+                <p class="txtCol">Symbols</p>
+              </div>
+            </div>
+            <div class="optionsOne">
+              <div class="switchContainer">
+                <div class="switch-m">
+                  <div class="switch-s"></div>
+                </div>
+              </div>
+              <div class="textT">
+                <p class="txtSubCol">abc</p>
+                <p class="txtCol">Lowercase</p>
+              </div>
+            </div>
+          </div>
+          <div class="optionsDiv">
+            <div class="optionsOne border">
+              <div class="switchContainer">
+                <div class="switch-m">
+                  <div class="switch-s"></div>
+                </div>
+              </div>
+              <div class="textT">
+                <p class="txtSubCol">ABC</p>
+                <p class="txtCol">Uppercase</p>
+              </div>
+            </div>
+            <div class="optionsOne">
+              <div class="switchContainer">
+                <div class="switch-m">
+                  <div class="switch-s"></div>
+                </div>
+              </div>
+              <div class="textT">
+                <p class="txtSubCol">abc + #@&</p>
+                <p class="txtColBig">Lowercase & symbols</p>
+              </div>
+            </div>
+          </div>
+          <div class="optionsDiv">
+            <div class="optionsOne border">
+              <div class="switchContainer">
+                <div class="switch-m">
+                  <div class="switch-s"></div>
+                </div>
+              </div>
+              <div class="textT">
+                <p class="txtSubCol">ABC + @#&</p>
+                <p class="txtColBig">Uppercase + symbols</p>
+              </div>
+            </div>
+            <div class="optionsOne">
+              <div class="switchContainer">
+                <div class="switch-m">
+                  <div class="switch-s"></div>
+                </div>
+              </div>
+              <div class="textT">
+                <p class="txtSubCol">123</p>
+                <p class="txtCol">Numbers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section role="password-history">
+      <div class="passHistory-m">
+        <div class="passHistory-s">
+          <div id="mainBody"></div>
+        </div>
+      </div>
+    </section>
   </section>
   <!-- <h1 class="bgImg">Generate Random <br>Password</h1><br>
 

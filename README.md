@@ -13,18 +13,8 @@ Open https://randompass.epizy.com and press the repeat button to generate a pass
 * Automatically Saves Passwords To Local Storage.
 * Fully Open Source Project.
 
-# v2.0.1
-
-* Some optimization to make page lag free.
-* Add do not save this password option.
-* Add custom dialogue box to delete all password.
-
-# Bug Fixed(v2.0.1)
-
-* Fixed : Password generating less digit than selected range.
-* Fixed : Double taping on '+' & '-'(Range number increments) would select the text.
-* Fixed : Frame droping while toggling nav and history section.
-
+# v1.0.0
+* Minimal Design
 
 # v2.0.0
 
@@ -37,9 +27,32 @@ Open https://randompass.epizy.com and press the repeat button to generate a pass
 # Bug Fixed (v2.0.0)
 
 * Fixed : Password does not save after '< (this sign)'. ex-Generated Password = 'abc<123' , Saved in History = 'abc'.
+ 
+# v2.0.1
+
+* Some optimization to make page lag free.
+* Add do not save this password option.
+* Add custom dialogue box to delete all password.
 
 
-# v1.0.0
+# Bug Fixed(v2.0.1)
 
-* Can generate only one type of password.
-* Saving feature was added in 2.0.0
+* Fixed : Password generating less digit than selected range.
+* Fixed : Double taping on '+' & '-'(Range number increments) would select the text.
+* Fixed : Frame droping while toggling nav and history section.
+
+# v3.0.0
+
+* Redesigned Whole UI.
+* Add extra buttons for each fields to save some time copying.
+* Add delete button for each password so you can delete an unnecessary password without deleting them all.
+* Add password suggestions based on length of password.
+* Moved setting component to menu.
+
+# Bug fixed(v3.0.0)
+
+* No bugs were found in v2.0.1
+* This update only contains UI changes.
+
+
+# Thanks For Using BytePass.

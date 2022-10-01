@@ -11,7 +11,15 @@ clip.addEventListener("click", copy);
 
 range.oninput = popRange;
 
+window.onload = function() {
+  let letLoad = document.getElementById('letLoad');
+  let letZoom = document.getElementById('letZoom');
 
+  setTimeout(() => {
+    letLoad.classList.add('windFall');
+    letZoom.classList.add('zoomTog')
+  }, 140)
+}
 btnSelector[0].onclick = function() {
   btnMover[0].classList.add("switchMove");
   btnMover[1].classList.remove("switchMove");
@@ -119,31 +127,36 @@ function popRange() {
 
       let spanIconGrab = document.getElementById('shield');
       let suggestion = document.getElementById('suggestion');
+     // let thisNav = document.getElementById('thisNav');
 
       if (range.value < 9) {
         document.body.style.backgroundColor = '#D2364E';
         spanIconGrab.innerHTML = 'gpp_bad';
         suggestion.innerHTML = 'Weak Password';
+      //  thisNav.style.backgroundColor = '#D2364E';
       }
       else if (range.value > 11 && range.value < 18) {
         document.body.style.backgroundColor = '#B95140';
         spanIconGrab.innerHTML = 'privacy_tip';
         suggestion.innerHTML = 'Fairly Strong Password';
+      //  thisNav.style.backgroundColor = '#B95140';
       }
       else if (range.value > 17 && range.value < 20) {
         document.body.style.backgroundColor = '#1E7E5A';
         spanIconGrab.innerHTML = 'verified_user';
         suggestion.innerHTML = 'Strong Password';
+      //  thisNav.style.backgroundColor = '#1E7E5A';
       }
       else if (range.value > 20) {
-        document.body.style.backgroundColor = '#1E7E5A';
+        document.body.style.backgroundColor = '#3A6ABC';
         spanIconGrab.innerHTML = 'verified_user';
         suggestion.innerHTML = 'Very Strong Password';
+      //  thisNav.style.backgroundColor = '#3A6ABC';
       }
     }
   }
   passId.value = generate();
-  
+
   if (passId.value === '') {
     let disSecure = document.getElementById('disSecure');
 
@@ -155,8 +168,8 @@ function popRange() {
     disSecure.style.opacity = '1';
   }
 }
-  passId.value = generate();
-    disSecure.style.opacity = '1';
+passId.value = generate();
+disSecure.style.opacity = '1';
 
 function generate() {
   var pass = '';
@@ -418,6 +431,17 @@ function copy() {
   // }
 }
 
+function navCall() {
+  let thisNav = document.getElementById('thisNav');
+  let bOne = document.getElementById('bOne');
+  let bTwo = document.getElementById('bTwo');
+  let bThi = document.getElementById('bThi');
+
+  thisNav.classList.toggle('nav-tog');
+  
+  bOne.classList.toggle('b1Tog');
+  bThi.classList.toggle('b2Tog');
+}
 
 function plus() {
   document.getElementById("range").value++;
