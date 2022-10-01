@@ -2,12 +2,11 @@ let btnSelector = document.querySelectorAll(".switch-m");
 let btnMover = document.querySelectorAll(".switch-s");
 const diceClick = document.getElementById("dice");
 let range = document.getElementById("range");
-const clip = document.getElementById("clipboard");
 let passId = document.getElementById("passId");
 let card = document.getElementById("Card");
 
 diceClick.addEventListener('click', paste);
-clip.addEventListener("click", copy);
+//clip.addEventListener("click", copy);
 
 range.oninput = popRange;
 
@@ -121,7 +120,7 @@ settingPopUp.addEventListener('click', () => {
 })
 
 function popRange() {
-  for (var i = 0; i < 301; i++) {
+  for (let i = 0; i < 301; i++) {
     if (range.value == i) {
       rangeMeter.innerHTML = i;
 
@@ -367,6 +366,30 @@ function runCopy(index) {
 
   parent.blur();
 }
+let copyCall = document.getElementById('copyCall');
+
+copyCall.addEventListener('click',()=> {
+  let radCheck = document.getElementById('checkConsent');
+  
+  if(passId.value != '') {
+    if(radCheck.checked != true) {
+      let copyPass = passId;
+      copyPass.select();
+      copyPass.setSelectionRange(0,9999);
+      document.execCommand('copy');
+      
+      getThePassword();
+      passId.blur();
+    }
+    else {
+      let copyPass = passId;
+      copyPass.select();
+      copyPass.setSelectionRange(0,9999);
+      document.execCommand('copy');
+      passId.blur();
+    }
+  }
+})
 
 let purgeBtn = document.getElementById('purge');
 

@@ -46,7 +46,7 @@ Open https://randompass.epizy.com and press the repeat button to generate a pass
 * Redesigned Whole UI.
 * Add extra buttons for each fields to save some time copying.
 * Add delete button for each password so you can delete an unnecessary password without deleting them all.
-* Add password suggestions based on length of password.
+* Add password strength suggestions based on length of password.
 * Moved setting component to menu.
 
 # Bug fixed(v3.0.0)
