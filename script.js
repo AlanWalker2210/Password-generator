@@ -340,9 +340,8 @@ function deleteTask(itemIndex) {
   thisArray.sort()
   thisArraystr = localStorage.getItem('itemsJson');
   thisArray = JSON.parse(thisArraystr);
-  if (confirm("Do you want to Delete?")) {
-    thisArray.splice(itemIndex, 1);
-  }
+
+  thisArray.splice(itemIndex, 1);
   localStorage.setItem('itemsJson', JSON.stringify(thisArray));
 
   updateList();
@@ -388,12 +387,12 @@ let copyCall = document.getElementById('copyCall');
 copyCall.addEventListener('click', () => {
   let radCheck = document.getElementById('checkConsent');
   let alertId = document.getElementById('alertId');
-  
+
   alertId.classList.add('alertTogg');
-  
-  setTimeout(()=> {
-  alertId.classList.remove('alertTogg');
-  },2000)
+
+  setTimeout(() => {
+    alertId.classList.remove('alertTogg');
+  }, 2000)
 
   if (passId.value != '') {
     if (radCheck.checked != true) {
