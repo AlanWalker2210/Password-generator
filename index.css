@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Noto+Sans+Mono&display=swap');
 
 * {
   margin: 0;
@@ -56,6 +55,7 @@ p {
   overflow: hidden;
   border-radius: 0 0 10px 10px;
   backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 .nav-tog {
   height: 380px;
@@ -128,6 +128,7 @@ p {
   background: none;
   /*background: linear-gradient(90deg ,#000 90%,#8C8C8C 100%);*/
   backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(5px);
   font-family: Noto Sans Mono;
   font-weight: bold;
   letter-spacing: 1px;
@@ -400,6 +401,7 @@ a {
   top: 0;
   left: 0;
   backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   filter: brightness(90%);
   display: flex;
   justify-content: center;
@@ -469,7 +471,7 @@ a {
 }
 .copySect-m {
   width: 100%;
-  height: 110px;
+  height: 120px;
   position: fixed;
   bottom: 90px;
   display: flex;
@@ -487,7 +489,7 @@ a {
 }
 .copySect-s {
   width: 90%;
-  height: 100px;
+  height: 110px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 0 5px #000;
@@ -549,4 +551,29 @@ a {
   align-items: center;
   justify-content: space-evenly;
   border-radius: 20px;
+}
+.deleteOne-m {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.deleteOne-s {
+  width: 90%;
+  height: 40px;
+  background: #fff;
+  box-shadow: 0 0 5px #000;
+  border-radius: 10px;
+  position: fixed;
+  bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flexOne {
+  margin: 0 0 0 10px;
+}
+button {
+  font-family: Montserrat;
 }

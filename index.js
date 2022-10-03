@@ -16,7 +16,7 @@ window.onload = function() {
 
   setTimeout(() => {
     letLoad.classList.add('windFall');
-    letZoom.classList.add('zoomTog')
+    letZoom.classList.add('zoomTog');
   }, 140)
 }
 btnSelector[0].onclick = function() {
