@@ -1,16 +1,16 @@
-
 * {
   margin: 0;
   padding: 0;
 }
+
 /*green - 1E7E5A
  light red - B95140
  red - D2364E*/
- 
+
 body {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-weight: 600;
-  background: #1E7E5A;
+  background: #1e7e5a;
 }
 
 .thisTitle {
@@ -20,17 +20,20 @@ body {
   font-weight: 700;
   text-align: center;
 }
+
 .thisTitleHolder {
   color: #fff;
   text-align: center;
   height: 70px;
   box-shadow: 0 0 5px #000;
   top: 0;
-  background: #070C40B5;
+  background: #070c40b5;
 }
+
 p {
   color: #fff;
 }
+
 .navBar {
   width: 40px;
   height: 40px;
@@ -38,28 +41,32 @@ p {
   margin: 15px 0 0 10px;
   transition: 0.5s;
 }
+
 .personInfo {
   position: absolute;
   right: 20px;
   top: 20px;
   font-size: 2rem;
 }
+
 .nav-m {
   width: 100%;
   height: 0px;
   position: fixed;
-  background: #070C40B5;
+  background: #070c40b5;
   left: 0;
-  z-index:555;
+  z-index: 555;
   transition: 0.5s;
   overflow: hidden;
   border-radius: 0 0 10px 10px;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 }
+
 .nav-tog {
   height: 380px;
 }
+
 .bOne {
   width: 30px;
   height: 2px;
@@ -68,14 +75,17 @@ p {
   border-radius: 5px;
   transition: 0.5s;
 }
+
 .b1Tog {
   width: 20px;
   transform: rotate(-45deg) translateX(-8px) translateY(-4px);
 }
+
 .b2Tog {
   width: 20px;
   transform: rotate(45deg) translateX(-8px) translateY(4px);
 }
+
 .a {
   width: 100%;
   height: 65px;
@@ -84,12 +94,15 @@ p {
   align-items: center;
   color: #fff;
 }
+
 .aIcon {
   margin: 0 0 0 20px;
 }
+
 .margSpan {
   margin: -5px 0 0 0;
 }
+
 .borderLine-m {
   width: 100%;
   height: 160px;
@@ -109,7 +122,8 @@ p {
               0 0 5px #7C65FF;*/
 }
 
-.inputAppName,.inputPassField {
+.inputAppName,
+.inputPassField {
   width: 100%;
   height: 90px;
   display: flex;
@@ -122,7 +136,7 @@ p {
   height: 25px;
   padding: 10px;
   border-radius: 0px;
-  border : none;
+  border: none;
   border-bottom: 1.5px solid #fff;
   outline: none;
   background: none;
@@ -134,13 +148,16 @@ p {
   letter-spacing: 1px;
   color: #fff;
 }
+
 a {
   text-decoration: none;
   color: #fff;
 }
+
 #passId {
   font-size: 1.1rem;
 }
+
 .secureTip {
   display: flex;
   margin: -10px 0 40px 0;
@@ -149,19 +166,24 @@ a {
   opacity: 0;
   transition: 0.8s;
 }
+
 .margShield {
   margin: 0 0 0 20px;
 }
+
 ::placeholder {
-  color: #BFBFBF;
+  color: #bfbfbf;
 }
+
 .anotherInputToCopy {
   opacity: 0;
   pointer-events: none;
 }
+
 #thisCopy {
   color: #000;
 }
+
 .allBtnSect-m {
   width: 100%;
   height: 60px;
@@ -186,14 +208,18 @@ a {
   box-shadow: 0 0 5px #888888;
   border-radius: 50%;
   font-size: 2rem;
+  cursor: pointer;
 }
+
 .rotSet {
   transform: rotate(360deg);
   transition: 0.8s;
 }
+
 .settingDiv-m {
   width: 100%;
-  height: 0px;/*270*/
+  height: 0px;
+  /*270*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -201,9 +227,11 @@ a {
   overflow: hidden;
   transition: 0.8s;
 }
+
 .heightInc {
   height: 280px;
 }
+
 .settingDiv-s {
   width: 60%;
   height: 260px;
@@ -211,9 +239,10 @@ a {
   border-radius: 5px;
   transform: scale(1);
   transition: 0.8s;
-  box-shadow: 0 0 5px #6A6A6A;
-  background: #1A1A1A;
+  box-shadow: 0 0 5px #6a6a6a;
+  background: #1a1a1a;
 }
+
 .scaleInc {
   transform: scale(1);
 }
@@ -230,10 +259,13 @@ a {
   align-items: center;
   width: 100%;
   margin: 10px 0 0 0;
+  cursor: pointer;
 }
+
 .range-o-meter {
   text-align: center;
 }
+
 .optionsDiv {
   width: 100%;
   height: 70px;
@@ -241,101 +273,127 @@ a {
   justify-content: center;
   align-items: center;
 }
+
 .switchContainer {
   width: 100%;
   height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
+
 .optionsOne {
   width: 50%;
   height: 70px;
   border-bottom: 0.5px solid #404340;
 }
+
 .border {
   border-right: 0.5px solid #404340;
 }
+
 .switch-m {
   width: 40px;
   height: 20px;
-  background: #C3C3C3;
+  background: #c3c3c3;
   border-radius: 20px;
   display: flex;
   align-items: center;
-  box-shadow: .1px .1px 2px #000 inset;
+  box-shadow: 0.1px 0.1px 2px #000 inset;
   transition: 0.8s;
 }
- .switch-s {
+
+.switch-s {
   width: 15px;
   height: 15px;
   background: #000;
   border-radius: 50%;
   margin: 0 0 0 3px;
   transition: 0.5s;
-  box-shadow: .1px .1px 2px #000;
+  box-shadow: 0.1px 0.1px 2px #000;
 }
+
 .switch-bg {
-  background: #478B61;
+  background: #478b61;
 }
+
 .switchMove {
   margin: 0 0 0 22px;
 }
-.txtSubCol  {
+
+.txtSubCol {
   color: #787878;
   text-align: center;
 }
-.txtColBig,.txtCol {
+
+.txtColBig,
+.txtCol {
   color: #fff;
   font-size: 0.7rem;
   text-align: center;
 }
+
 .txtColBig {
   font-size: 0.6rem;
 }
+
 .rotate {
   transform: rotate(360deg);
   transition: 0.3s;
 }
+
 .passHistory-m {
   width: 100%;
   color: #fff;
 }
+
 .elThi {
   background: none;
   border: none;
   outline: none;
   color: #fff;
 }
+
 .eyeCopy {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   background: #f00;
 }
+
 .eye {
   margin: -60px 10px 0 10px;
+  cursor: pointer;
 }
+
 #thisId {
   margin: 25px 0 25px 0px;
 }
+
 #thisCopy {
   color: #fff;
   font-family: Noto Sans Mono;
 }
-.elOne,.elTwo,.elThi {
+
+.elOne,
+.elTwo,
+.elThi {
   color: #fff;
   margin: 5px 0 5px 20px;
   list-style: none;
 }
+
 .thisWhite {
   color: #fff;
 }
+
 .line {
   width: 100%;
   height: 0.5px;
   background: #989898;
 }
+
 .windLoad-m {
   width: 100%;
   height: 100vh;
@@ -348,15 +406,17 @@ a {
   align-items: center;
   overflow: hidden;
 }
+
 .windLoad-s {
   width: 50%;
-  border: .5px solid #f00;
+  border: 0.5px solid #f00;
   height: 5px;
   border-radius: 5px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
+
 .windLoad-es {
   width: 0%;
   height: 4px;
@@ -365,35 +425,43 @@ a {
   border-radius: 5px;
   animation: load 1.5s linear;
 }
+
 .windFall {
   transform: translateY(-100%);
   transition: 0.8s;
 }
+
 @keyframes load {
   0% {
     width: 0;
   }
+
   26% {
     width: 12%;
   }
+
   46% {
     width: 56%;
   }
+
   88% {
     width: 88%;
   }
+
   100% {
     width: 100%;
   }
 }
+
 .letZoom {
   transform: scale(0.8);
 }
+
 .zoomTog {
   transform: scale(1);
   transition: 0.8s;
-
 }
+
 .deleteForeverWarn-m {
   width: 100%;
   height: 100vh;
@@ -410,14 +478,17 @@ a {
   transform: translateY(-100%);
   transition: 0.8s;
 }
+
 .transpurge {
   transform: translateY(0);
 }
+
 .deleteForeverWarn-s {
   width: 100%;
   height: 70vh;
   text-align: center;
 }
+
 .exclamationMark {
   width: 100%;
   height: 40vh;
@@ -425,36 +496,42 @@ a {
   justify-content: center;
   align-items: center;
 }
+
 .mark {
   width: 200px;
   height: 200px;
-  background: #EF4141;
+  background: #ef4141;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 10rem;
   color: #fff;
   border-radius: 50%;
-  box-shadow: 0 0 10px #EF4141;
+  box-shadow: 0 0 10px #ef4141;
   animation: scaleP 2s linear infinite;
 }
+
 @keyframes scaleP {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(0.9);
   }
+
   100% {
     transform: scale(1);
   }
 }
+
 .buttonField {
   height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .buttonField button {
   border: 1px solid #fff;
   background: none;
@@ -462,13 +539,16 @@ a {
   color: #fff;
   padding: 10px;
 }
+
 .buttonField button:nth-child(1) {
   border-radius: 20px 0 0 20px;
   border-right: none;
 }
+
 .buttonField button:nth-child(2) {
   border-radius: 0 20px 20px 0;
 }
+
 .copySect-m {
   width: 100%;
   height: 120px;
@@ -482,11 +562,13 @@ a {
   opacity: 0;
   transition: 0.5s;
 }
+
 .copyTogg {
   transform: translateY(0);
   opacity: 1;
   pointer-events: auto;
 }
+
 .copySect-s {
   width: 90%;
   height: 110px;
@@ -494,15 +576,18 @@ a {
   border-radius: 10px;
   box-shadow: 0 0 5px #000;
 }
+
 .consent {
   margin: 10px 0 0 10px;
 }
+
 .storeOrNot {
   display: flex;
   align-items: center;
   margin: 10px 0 0 10px;
   font-family: Noto Sans Mono;
 }
+
 .buttonsYorN {
   width: 100%;
   display: flex;
@@ -510,23 +595,27 @@ a {
   align-items: center;
   margin: 10px 0 0 0;
 }
+
 .yes {
   margin: 0 10px 0 0;
-  background: #64A8D1;
+  background: #64a8d1;
   border-radius: 10px;
 }
+
 .no {
   margin: 0 10px 0 0;
-  background: #D16464;
+  background: #d16464;
   border-radius: 10px;
 }
+
 .desBtn {
   width: 50px;
   height: 30px;
   border: none;
 }
+
 .alertCop-m {
-  width: 100%; 
+  width: 100%;
   height: 50px;
   position: fixed;
   top: 70px;
@@ -538,11 +627,13 @@ a {
   pointer-events: none;
   transition: 0.5s;
 }
-.alertTogg{
+
+.alertTogg {
   transform: translateY(0);
   opacity: 1;
   pointer-events: auto;
 }
+
 .alertCop-s {
   width: 100px;
   height: 30px;
@@ -551,4 +642,14 @@ a {
   align-items: center;
   justify-content: space-evenly;
   border-radius: 20px;
+}
+
+@media only screen and (min-width: 675px) {
+  .copySect-s {
+    width: 30%;
+    height: 110px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #000;
+  }
 }

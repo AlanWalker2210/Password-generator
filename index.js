@@ -5,21 +5,21 @@ let range = document.getElementById("range");
 let passId = document.getElementById("passId");
 let card = document.getElementById("Card");
 
-diceClick.addEventListener('click', paste);
+diceClick.addEventListener("click", paste);
 //clip.addEventListener("click", copy);
 
 range.oninput = popRange;
 
-window.onload = function() {
-  let letLoad = document.getElementById('letLoad');
-  let letZoom = document.getElementById('letZoom');
+window.onload = function () {
+  let letLoad = document.getElementById("letLoad");
+  let letZoom = document.getElementById("letZoom");
 
   setTimeout(() => {
-    letLoad.classList.add('windFall');
-    letZoom.classList.add('zoomTog');
-  }, 140)
-}
-btnSelector[0].onclick = function() {
+    letLoad.classList.add("windFall");
+    letZoom.classList.add("zoomTog");
+  }, 140);
+};
+btnSelector[0].onclick = function () {
   btnMover[0].classList.add("switchMove");
   btnMover[1].classList.remove("switchMove");
   btnMover[2].classList.remove("switchMove");
@@ -32,8 +32,8 @@ btnSelector[0].onclick = function() {
   btnSelector[3].classList.remove("switch-bg");
   btnSelector[4].classList.remove("switch-bg");
   btnSelector[5].classList.remove("switch-bg");
-}
-btnSelector[1].onclick = function() {
+};
+btnSelector[1].onclick = function () {
   btnMover[1].classList.add("switchMove");
   btnMover[0].classList.remove("switchMove");
   btnMover[2].classList.remove("switchMove");
@@ -46,9 +46,8 @@ btnSelector[1].onclick = function() {
   btnSelector[3].classList.remove("switch-bg");
   btnSelector[4].classList.remove("switch-bg");
   btnSelector[5].classList.remove("switch-bg");
-
-}
-btnSelector[2].onclick = function() {
+};
+btnSelector[2].onclick = function () {
   btnMover[2].classList.add("switchMove");
   btnMover[0].classList.remove("switchMove");
   btnMover[1].classList.remove("switchMove");
@@ -61,8 +60,8 @@ btnSelector[2].onclick = function() {
   btnSelector[3].classList.remove("switch-bg");
   btnSelector[4].classList.remove("switch-bg");
   btnSelector[5].classList.remove("switch-bg");
-}
-btnSelector[3].onclick = function() {
+};
+btnSelector[3].onclick = function () {
   btnMover[3].classList.add("switchMove");
   btnMover[0].classList.remove("switchMove");
   btnMover[1].classList.remove("switchMove");
@@ -75,8 +74,8 @@ btnSelector[3].onclick = function() {
   btnSelector[2].classList.remove("switch-bg");
   btnSelector[4].classList.remove("switch-bg");
   btnSelector[5].classList.remove("switch-bg");
-}
-btnSelector[4].onclick = function() {
+};
+btnSelector[4].onclick = function () {
   btnMover[4].classList.add("switchMove");
   btnMover[0].classList.remove("switchMove");
   btnMover[1].classList.remove("switchMove");
@@ -89,8 +88,8 @@ btnSelector[4].onclick = function() {
   btnSelector[2].classList.remove("switch-bg");
   btnSelector[3].classList.remove("switch-bg");
   btnSelector[5].classList.remove("switch-bg");
-}
-btnSelector[5].onclick = function() {
+};
+btnSelector[5].onclick = function () {
   btnMover[5].classList.add("switchMove");
   btnMover[0].classList.remove("switchMove");
   btnMover[1].classList.remove("switchMove");
@@ -103,119 +102,110 @@ btnSelector[5].onclick = function() {
   btnSelector[2].classList.remove("switch-bg");
   btnSelector[3].classList.remove("switch-bg");
   btnSelector[4].classList.remove("switch-bg");
-}
+};
 
 //popRange();
 
-let settingPopUp = document.getElementById('settings');
+let settingPopUp = document.getElementById("settings");
 
-settingPopUp.addEventListener('click', () => {
-  let settingRot = document.getElementById('toRs');
-  let settScale = document.getElementById('scale');
-  let settHeight = document.getElementById('height');
+settingPopUp.addEventListener("click", () => {
+  let settingRot = document.getElementById("toRs");
+  let settScale = document.getElementById("scale");
+  let settHeight = document.getElementById("height");
 
-  settingRot.classList.toggle('rotSet');
-  settScale.classList.toggle('scaleInc');
-  settHeight.classList.toggle('heightInc');
-})
+  settingRot.classList.toggle("rotSet");
+  settScale.classList.toggle("scaleInc");
+  settHeight.classList.toggle("heightInc");
+});
 
 function popRange() {
   for (let i = 0; i < 301; i++) {
     if (range.value == i) {
       rangeMeter.innerHTML = i;
 
-      let spanIconGrab = document.getElementById('shield');
-      let suggestion = document.getElementById('suggestion');
+      let spanIconGrab = document.getElementById("shield");
+      let suggestion = document.getElementById("suggestion");
       // let thisNav = document.getElementById('thisNav');
 
       if (range.value < 9) {
-        document.body.style.backgroundColor = '#D2364E';
-        spanIconGrab.innerHTML = 'gpp_bad';
-        suggestion.innerHTML = 'Weak Password';
+        document.body.style.backgroundColor = "#D2364E";
+        spanIconGrab.innerHTML = "gpp_bad";
+        suggestion.innerHTML = "Weak Password";
         //  thisNav.style.backgroundColor = '#D2364E';
-      }
-      else if (range.value > 11 && range.value < 18) {
-        document.body.style.backgroundColor = '#B95140';
-        spanIconGrab.innerHTML = 'privacy_tip';
-        suggestion.innerHTML = 'Fairly Strong Password';
+      } else if (range.value > 11 && range.value < 18) {
+        document.body.style.backgroundColor = "#B95140";
+        spanIconGrab.innerHTML = "privacy_tip";
+        suggestion.innerHTML = "Fairly Strong Password";
         //  thisNav.style.backgroundColor = '#B95140';
-      }
-      else if (range.value > 17 && range.value < 20) {
-        document.body.style.backgroundColor = '#1E7E5A';
-        spanIconGrab.innerHTML = 'verified_user';
-        suggestion.innerHTML = 'Strong Password';
+      } else if (range.value > 17 && range.value < 20) {
+        document.body.style.backgroundColor = "#1E7E5A";
+        spanIconGrab.innerHTML = "verified_user";
+        suggestion.innerHTML = "Strong Password";
         //  thisNav.style.backgroundColor = '#1E7E5A';
-      }
-      else if (range.value > 20) {
-        document.body.style.backgroundColor = '#3A6ABC';
-        spanIconGrab.innerHTML = 'verified_user';
-        suggestion.innerHTML = 'Very Strong Password';
+      } else if (range.value > 20) {
+        document.body.style.backgroundColor = "#3A6ABC";
+        spanIconGrab.innerHTML = "verified_user";
+        suggestion.innerHTML = "Very Strong Password";
         //  thisNav.style.backgroundColor = '#3A6ABC';
       }
     }
   }
   passId.value = generate();
 
-  if (passId.value === '') {
-    let disSecure = document.getElementById('disSecure');
+  if (passId.value === "") {
+    let disSecure = document.getElementById("disSecure");
 
-    disSecure.style.opacity = '0';
-  }
-  else {
-    let disSecure = document.getElementById('disSecure');
+    disSecure.style.opacity = "0";
+  } else {
+    let disSecure = document.getElementById("disSecure");
 
-    disSecure.style.opacity = '1';
+    disSecure.style.opacity = "1";
   }
 }
 passId.value = generate();
-disSecure.style.opacity = '1';
+disSecure.style.opacity = "1";
 
 function generate() {
-  let pass = '';
+  let pass = "";
   let digit;
   if (btnMover[0].classList.contains("switchMove")) {
     for (let i = 1; i <= range.value; i++) {
-      digit = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz11223344556677889900@_-=:/!+@_-+:/?@@@____";
+      digit =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz11223344556677889900@_-=:/!+@_-+:/?@@@____";
       let char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
-  }
-  else if (btnMover[1].classList.contains("switchMove")) {
+  } else if (btnMover[1].classList.contains("switchMove")) {
     for (let i = 1; i <= range.value; i++) {
       digit = "abcdefghijklmnopqrstuvwxyz";
       let char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
-  }
-  else if (btnMover[2].classList.contains("switchMove")) {
+  } else if (btnMover[2].classList.contains("switchMove")) {
     for (let i = 1; i <= range.value; i++) {
       digit = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
       let char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
-  }
-  else if (btnMover[3].classList.contains("switchMove")) {
+  } else if (btnMover[3].classList.contains("switchMove")) {
     for (let i = 1; i <= range.value; i++) {
       digit = "abcdefghijklmnopqrstuvwxyz11223344556677889900@_-=:/!+@@&&";
       let char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
-  }
-  else if (btnMover[4].classList.contains("switchMove")) {
+  } else if (btnMover[4].classList.contains("switchMove")) {
     for (let i = 1; i <= range.value; i++) {
       digit = "ABCDEFGHIJKLMNOPQRSTUVWXYZ11223344556677889900@_-=:/!+@@&&";
       let char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
-  }
-  else if (btnMover[5].classList.contains("switchMove")) {
+  } else if (btnMover[5].classList.contains("switchMove")) {
     for (let i = 1; i <= range.value; i++) {
       digit = "11223344556677889900";
       let char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
-  }
-  else {
+  } else {
     for (let i = 1; i <= range.value; i++) {
       digit = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
       let char = Math.floor(Math.random() * digit.length);
@@ -226,67 +216,76 @@ function generate() {
 }
 
 function paste() {
-  let toR = document.getElementById("toR")
+  let toR = document.getElementById("toR");
   toR.classList.add("rotate");
   setTimeout(() => {
     toR.classList.remove("rotate");
-  }, 300)
+  }, 300);
   passId.value = generate();
 
-  if (passId.value === '') {
-    let disSecure = document.getElementById('disSecure');
+  if (passId.value === "") {
+    let disSecure = document.getElementById("disSecure");
 
-    disSecure.style.opacity = '0';
-  }
-  else {
-    let disSecure = document.getElementById('disSecure');
+    disSecure.style.opacity = "0";
+  } else {
+    let disSecure = document.getElementById("disSecure");
 
-    disSecure.style.opacity = '1';
+    disSecure.style.opacity = "1";
   }
 }
 
-updateList()
+updateList();
 
 function getThePassword() {
   let a = new Date();
-  let t = [a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds() + "&nbsp;" + a.getDate() + "/" + a.getMonth() + "/" + a.getFullYear()];
+  let t = [
+    a.getHours() +
+      ":" +
+      a.getMinutes() +
+      ":" +
+      a.getSeconds() +
+      "&nbsp;" +
+      a.getDate() +
+      "/" +
+      a.getMonth() +
+      "/" +
+      a.getFullYear(),
+  ];
 
   let passInfo = document.getElementById("passId").value;
   let passPort = nameId.value;
 
-  if (localStorage.getItem('itemsJson') == null) {
+  if (localStorage.getItem("itemsJson") == null) {
     thisArray = [];
     thisArray.push([passPort, t[0], passInfo]);
-    localStorage.setItem('itemsJson', JSON.stringify(thisArray));
-  }
-  else {
-    thisArraystr = localStorage.getItem('itemsJson');
+    localStorage.setItem("itemsJson", JSON.stringify(thisArray));
+  } else {
+    thisArraystr = localStorage.getItem("itemsJson");
     thisArray = JSON.parse(thisArraystr);
     thisArray.push([passPort, t[0], passInfo]);
-    localStorage.setItem('itemsJson', JSON.stringify(thisArray));
+    localStorage.setItem("itemsJson", JSON.stringify(thisArray));
   }
   updateList();
 }
 
 function updateList() {
-  if (localStorage.getItem('itemsJson') == null) {
+  if (localStorage.getItem("itemsJson") == null) {
     thisArray = [];
-    localStorage.setItem('itemsJson', JSON.stringify(thisArray));
-  }
-  else {
-    thisArraystr = localStorage.getItem('itemsJson');
+    localStorage.setItem("itemsJson", JSON.stringify(thisArray));
+  } else {
+    thisArraystr = localStorage.getItem("itemsJson");
     thisArray = JSON.parse(thisArraystr);
   }
   let mainBody = document.getElementById("mainBody");
-  let str = '';
+  let str = "";
   thisArray.forEach((element, index) => {
-
-
     str += `
-             <ol class="ol" id='thisId' ${index+1}>
+             <ol class="ol" id='thisId' ${index + 1}>
              <li class="elOne">${element[0]}</li>
              <li class="elTwo">${element[1]}</li>
-             <input class="elThi" id='thisCopy' value='${element[2]}' type='password' readonly/>
+             <input class="elThi" id='thisCopy' value='${
+               element[2]
+             }' type='password' readonly/>
              <div class="eyeCopy">
               <div class="eye" id='theEye' onclick='passTypeChange(${index})'>
               <span class="material-symbols-rounded thisWhite thisTypeIcon">
@@ -306,57 +305,52 @@ content_copy
              </div>
              <div class="line"></div>
              </ol>
-              `
+              `;
   });
   mainBody.innerHTML = str;
 }
 
 function passTypeChange(element) {
+  let thisTypeIcon = document.querySelectorAll(".thisTypeIcon");
 
-  let thisTypeIcon = document.querySelectorAll('.thisTypeIcon');
-
-
-  if (thisTypeIcon[element].innerHTML === 'visibility_off') {
-    thisTypeIcon[element].innerHTML = 'visibility';
-  }
-  else {
-    thisTypeIcon[element].innerHTML = 'visibility_off';
+  if (thisTypeIcon[element].innerHTML === "visibility_off") {
+    thisTypeIcon[element].innerHTML = "visibility";
+  } else {
+    thisTypeIcon[element].innerHTML = "visibility_off";
   }
 
-  let elThi = document.querySelectorAll('.elThi');
+  let elThi = document.querySelectorAll(".elThi");
 
-  let passField = 'password';
-  let textField = 'text';
+  let passField = "password";
+  let textField = "text";
 
-  if (elThi[element].type === 'text') {
+  if (elThi[element].type === "text") {
     elThi[element].type = passField;
-  }
-  else {
+  } else {
     elThi[element].type = textField;
   }
 }
 
 function deleteTask(itemIndex) {
-  thisArray.sort()
-  thisArraystr = localStorage.getItem('itemsJson');
+  thisArray.sort();
+  thisArraystr = localStorage.getItem("itemsJson");
   thisArray = JSON.parse(thisArraystr);
 
   thisArray.splice(itemIndex, 1);
-  localStorage.setItem('itemsJson', JSON.stringify(thisArray));
+  localStorage.setItem("itemsJson", JSON.stringify(thisArray));
 
   updateList();
 }
 
-let elThiPassInn = document.querySelectorAll('.elThi');
-
+let elThiPassInn = document.querySelectorAll(".elThi");
 
 function runCopy(index) {
-  let parent = document.getElementById('parent');
+  let parent = document.getElementById("parent");
   parent.value = thisArray[index][2];
 
-  let changeCopy = document.querySelectorAll('.thisCopyIcon');
+  let changeCopy = document.querySelectorAll(".thisCopyIcon");
 
-  changeCopy[index].innerHTML = 'done';
+  changeCopy[index].innerHTML = "done";
 
   let copyText = parent;
   copyText.select();
@@ -366,67 +360,66 @@ function runCopy(index) {
   parent.blur();
 }
 
-let clipIcon = document.getElementById('clipboard');
+let clipIcon = document.getElementById("clipboard");
 
-clipIcon.addEventListener('click', () => {
-  let callCopyCard = document.getElementById('thisIsCopy');
+clipIcon.addEventListener("click", () => {
+  let callCopyCard = document.getElementById("thisIsCopy");
 
-  callCopyCard.classList.add('copyTogg');
-})
+  callCopyCard.classList.add("copyTogg");
+});
 
-let noCopy = document.getElementById('noCopy');
+let noCopy = document.getElementById("noCopy");
 
-noCopy.addEventListener('click', () => {
-  let callCopyCard = document.getElementById('thisIsCopy');
+noCopy.addEventListener("click", () => {
+  let callCopyCard = document.getElementById("thisIsCopy");
 
-  callCopyCard.classList.remove('copyTogg');
-})
+  callCopyCard.classList.remove("copyTogg");
+});
 
-let copyCall = document.getElementById('copyCall');
+let copyCall = document.getElementById("copyCall");
 
-copyCall.addEventListener('click', () => {
-  let radCheck = document.getElementById('checkConsent');
-  let alertId = document.getElementById('alertId');
+copyCall.addEventListener("click", () => {
+  let radCheck = document.getElementById("checkConsent");
+  let alertId = document.getElementById("alertId");
 
-  alertId.classList.add('alertTogg');
+  alertId.classList.add("alertTogg");
 
   setTimeout(() => {
-    alertId.classList.remove('alertTogg');
-  }, 2000)
+    alertId.classList.remove("alertTogg");
+  }, 2000);
 
-  if (passId.value != '') {
+  if (passId.value != "") {
     if (radCheck.checked != true) {
       let copyPass = passId;
       copyPass.select();
       copyPass.setSelectionRange(0, 9999);
-      document.execCommand('copy');
+      document.execCommand("copy");
 
       getThePassword();
       passId.blur();
-    }
-    else {
+    } else {
       let copyPass = passId;
       copyPass.select();
       copyPass.setSelectionRange(0, 9999);
-      document.execCommand('copy');
+      document.execCommand("copy");
       passId.blur();
     }
   }
 
   setTimeout(() => {
-    let callCopyCard = document.getElementById('thisIsCopy');
+    let callCopyCard = document.getElementById("thisIsCopy");
 
-    callCopyCard.classList.remove('copyTogg');
-  }, 0)
-})
+    callCopyCard.classList.remove("copyTogg");
+  }, 0);
+});
 
-let purgeBtn = document.getElementById('purge');
+let purgeBtn = document.getElementById("purge");
 
-purgeBtn.addEventListener('click', () => {
-  let callPurge = document.getElementById('callPurge');
-  let purgeRn = document.getElementById('purgeRn');
+purgeBtn.addEventListener("click", () => {
+  let callPurge = document.getElementById("callPurge");
+  let purgeRn = document.getElementById("purgeRn");
 
-  callPurge.classList.add('transpurge')
+  callPurge.classList.add("transpurge");
 
   purgeRn.disabled = true;
 
@@ -434,54 +427,49 @@ purgeBtn.addEventListener('click', () => {
 
   let interval = setInterval(() => {
     purgeEnable--;
-    let purgeTimeOut = document.getElementById('purgeTimeOut');
+    let purgeTimeOut = document.getElementById("purgeTimeOut");
 
-    purgeTimeOut.innerHTML = purgeEnable + 's';
-    purgeTimeOut.style.opacity = '1';
+    purgeTimeOut.innerHTML = purgeEnable + "s";
+    purgeTimeOut.style.opacity = "1";
 
     if (purgeEnable == 0) {
       purgeRn.disabled = false;
-      purgeTimeOut.style.opacity = '0';
+      purgeTimeOut.style.opacity = "0";
     }
 
     if (purgeEnable <= 0) {
-      clearInterval(interval)
+      clearInterval(interval);
     }
+  }, 1000);
+});
 
-  }, 1000)
-})
+let purgeRn = document.getElementById("purgeRn");
 
-let purgeRn = document.getElementById('purgeRn');
-
-purgeRn.addEventListener('click', () => {
-  localStorage.clear()
+purgeRn.addEventListener("click", () => {
+  localStorage.clear();
 
   updateList();
-  let callPurge = document.getElementById('callPurge');
-  callPurge.classList.remove('transpurge')
+  let callPurge = document.getElementById("callPurge");
+  callPurge.classList.remove("transpurge");
+});
 
-})
+let cancelPurge = document.getElementById("cancelPurge");
 
-let cancelPurge = document.getElementById('cancelPurge');
-
-cancelPurge.addEventListener('click', () => {
-  let callPurge = document.getElementById('callPurge');
-  callPurge.classList.remove('transpurge')
-
-})
-
-
+cancelPurge.addEventListener("click", () => {
+  let callPurge = document.getElementById("callPurge");
+  callPurge.classList.remove("transpurge");
+});
 
 function navCall() {
-  let thisNav = document.getElementById('thisNav');
-  let bOne = document.getElementById('bOne');
-  let bTwo = document.getElementById('bTwo');
-  let bThi = document.getElementById('bThi');
+  let thisNav = document.getElementById("thisNav");
+  let bOne = document.getElementById("bOne");
+  let bTwo = document.getElementById("bTwo");
+  let bThi = document.getElementById("bThi");
 
-  thisNav.classList.toggle('nav-tog');
+  thisNav.classList.toggle("nav-tog");
 
-  bOne.classList.toggle('b1Tog');
-  bThi.classList.toggle('b2Tog');
+  bOne.classList.toggle("b1Tog");
+  bThi.classList.toggle("b2Tog");
 }
 
 function plus() {
@@ -494,4 +482,4 @@ function minus() {
   document.getElementById("range").value--;
 
   popRange();
-};
+}
