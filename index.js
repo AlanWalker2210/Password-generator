@@ -4,6 +4,9 @@ const diceClick = document.getElementById("dice");
 let range = document.getElementById("range");
 let passId = document.getElementById("passId");
 let card = document.getElementById("Card");
+let searchBar = document.getElementById("searchBar");
+
+searchBar.addEventListener("click", () => {});
 
 diceClick.addEventListener("click", paste);
 //clip.addEventListener("click", copy);
@@ -482,4 +485,26 @@ function minus() {
   document.getElementById("range").value--;
 
   popRange();
+}
+
+// let searchFilter = thisArray.filter(letFilter);
+
+function letFilter() {
+  let searchValue = document.getElementById("searchValue");
+
+  if (searchValue.value == "") {
+    console.log("empty");
+  } else {
+    let result = thisArray.filter(letFilterTwo);
+    // console.log(thisArray.find(letFilterTwo));
+    resultH1.innerHTML = result;
+  }
+}
+
+function letFilterTwo(thisArrayT) {
+  thisArray.sort();
+  let searchValue = document.getElementById("searchValue").value;
+  // searchValue.toLowerCase();
+
+  return thisArrayT > searchValue;
 }

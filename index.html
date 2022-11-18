@@ -45,12 +45,28 @@
             <p>FOSS Password Generator</p>
           </div>
           <div class="personInfo">
-            <a href="https://github.com/panchalbhavya2210" target="_blank">
-              <span class="material-symbols-rounded"> person </span>
-            </a>
+            <span id="searchBar" class="material-symbols-rounded">
+              search
+            </span>
           </div>
         </div>
       </header>
+      <div class="searchBar">
+        <div class="searchBarSub">
+          <input
+            type="text"
+            id="searchValue"
+            placeholder="Search through history..."
+            class="inpTypeSearch"
+            onkeyup="letFilter()"
+          />
+        </div>
+      </div>
+      <div class="resultDiv">
+        <div class="singleResult">
+          <h1 class="tag" id="resultH1"></h1>
+        </div>
+      </div>
       <nav>
         <div class="nav-m" id="thisNav">
           <div class="nav-s">
