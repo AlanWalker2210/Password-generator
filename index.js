@@ -174,7 +174,7 @@ function generate() {
   if (btnMover[0].classList.contains("switchMove")) {
     for (let i = 1; i <= range.value; i++) {
       digit =
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz11223344556677889900@_-=:/!+@_-+:/?@@@____";
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz11223344556677889900@@@@####____&&&&----++++(((())))****????````~~~~";
       let char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
@@ -192,13 +192,13 @@ function generate() {
     }
   } else if (btnMover[3].classList.contains("switchMove")) {
     for (let i = 1; i <= range.value; i++) {
-      digit = "abcdefghijklmnopqrstuvwxyz11223344556677889900@_-=:/!+@@&&";
+      digit = "abcdefghijklmnopqrstuvwxyz11223344556677889900@@@@####____&&&&----++++(((())))****????````~~~~";
       let char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
   } else if (btnMover[4].classList.contains("switchMove")) {
     for (let i = 1; i <= range.value; i++) {
-      digit = "ABCDEFGHIJKLMNOPQRSTUVWXYZ11223344556677889900@_-=:/!+@@&&";
+      digit = "ABCDEFGHIJKLMNOPQRSTUVWXYZ11223344556677889900@@@@####____&&&&----++++(((())))****????````~~~~";
       let char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
