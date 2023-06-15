@@ -384,20 +384,20 @@ a {
 }
 
 #thisCopy {
-  color: #fff;
+  color: #000000;
   font-family: Noto Sans Mono;
 }
 
 .elOne,
 .elTwo,
 .elThi {
-  color: #fff;
+  color: #000000;
   margin: 5px 0 5px 20px;
   list-style: none;
 }
 
 .thisWhite {
-  color: #fff;
+  color: #000000;
 }
 
 .line {
@@ -655,7 +655,26 @@ a {
   justify-content: space-evenly;
   border-radius: 20px;
 }
+.ol li {
+  list-style: none;
+}
+.mainDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #000;
+}
 
+.flexDivWhichCenters {
+  width: 80%;
+  background-color: #ffffffd4;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.favicon {
+  position: absolute;
+}
 @media only screen and (min-width: 675px) {
   .copySect-s {
     width: 30%;

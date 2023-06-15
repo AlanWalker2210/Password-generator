@@ -192,13 +192,15 @@ function generate() {
     }
   } else if (btnMover[3].classList.contains("switchMove")) {
     for (let i = 1; i <= range.value; i++) {
-      digit = "abcdefghijklmnopqrstuvwxyz11223344556677889900@@@@####____&&&&----++++(((())))****????````~~~~";
+      digit =
+        "abcdefghijklmnopqrstuvwxyz11223344556677889900@@@@####____&&&&----++++(((())))****????````~~~~";
       let char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
   } else if (btnMover[4].classList.contains("switchMove")) {
     for (let i = 1; i <= range.value; i++) {
-      digit = "ABCDEFGHIJKLMNOPQRSTUVWXYZ11223344556677889900@@@@####____&&&&----++++(((())))****????````~~~~";
+      digit =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ11223344556677889900@@@@####____&&&&----++++(((())))****????````~~~~";
       let char = Math.floor(Math.random() * digit.length);
       pass += digit.charAt(char);
     }
@@ -257,15 +259,16 @@ function getThePassword() {
 
   let passInfo = document.getElementById("passId").value;
   let passPort = nameId.value;
+  let imageLink = `https://${passPort}/favicon.ico`;
 
   if (localStorage.getItem("itemsJson") == null) {
     thisArray = [];
-    thisArray.push([passPort, t[0], passInfo]);
+    thisArray.push([passPort, t[0], passInfo, imageLink]);
     localStorage.setItem("itemsJson", JSON.stringify(thisArray));
   } else {
     thisArraystr = localStorage.getItem("itemsJson");
     thisArray = JSON.parse(thisArraystr);
-    thisArray.push([passPort, t[0], passInfo]);
+    thisArray.push([passPort, t[0], passInfo, imageLink]);
     localStorage.setItem("itemsJson", JSON.stringify(thisArray));
   }
   updateList();
@@ -283,12 +286,18 @@ function updateList() {
   let str = "";
   thisArray.forEach((element, index) => {
     str += `
+    <div class="mainDiv">
+    <div class="flexDivWhichCenters">
              <ol class="ol" id='thisId' ${index + 1}>
              <li class="elOne">${element[0]}</li>
              <li class="elTwo">${element[1]}</li>
              <input class="elThi" id='thisCopy' value='${
                element[2]
              }' type='password' readonly/>
+              <li>
+             
+              <img class="favicon" src="${element[3]}"/>
+              </li>
              <div class="eyeCopy">
               <div class="eye" id='theEye' onclick='passTypeChange(${index})'>
               <span class="material-symbols-rounded thisWhite thisTypeIcon">
@@ -306,8 +315,9 @@ content_copy
               </span>
               </div>
              </div>
-             <div class="line"></div>
              </ol>
+             </div>
+             </div>
               `;
   });
   mainBody.innerHTML = str;
