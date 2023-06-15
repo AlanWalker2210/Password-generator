@@ -4,9 +4,6 @@ const diceClick = document.getElementById("dice");
 let range = document.getElementById("range");
 let passId = document.getElementById("passId");
 let card = document.getElementById("Card");
-let searchBar = document.getElementById("searchBar");
-
-searchBar.addEventListener("click", () => {});
 
 diceClick.addEventListener("click", paste);
 //clip.addEventListener("click", copy);
@@ -140,7 +137,7 @@ function popRange() {
         spanIconGrab.innerHTML = "privacy_tip";
         suggestion.innerHTML = "Fairly Strong Password";
         //  thisNav.style.backgroundColor = '#B95140';
-      } else if (range.value > 17 && range.value < 20) {
+      } else if (range.value > 17 && range.value < 21) {
         document.body.style.backgroundColor = "#1E7E5A";
         spanIconGrab.innerHTML = "verified_user";
         suggestion.innerHTML = "Strong Password";
@@ -296,7 +293,7 @@ function updateList() {
              }' type='password' readonly/>
               <li>
              
-              <img class="favicon" src="${element[3]}"/>
+              <img id="imageCheckerID" class="favicon" src="${element[3]}"/>
               </li>
              <div class="eyeCopy">
               <div class="eye" id='theEye' onclick='passTypeChange(${index})'>
@@ -498,23 +495,3 @@ function minus() {
 }
 
 // let searchFilter = thisArray.filter(letFilter);
-
-function letFilter() {
-  let searchValue = document.getElementById("searchValue");
-
-  if (searchValue.value == "") {
-    console.log("empty");
-  } else {
-    let result = thisArray.filter(letFilterTwo);
-    // console.log(thisArray.find(letFilterTwo));
-    resultH1.innerHTML = result;
-  }
-}
-
-function letFilterTwo(thisArrayT) {
-  thisArray.sort();
-  let searchValue = document.getElementById("searchValue").value;
-  // searchValue.toLowerCase();
-
-  return thisArrayT > searchValue;
-}

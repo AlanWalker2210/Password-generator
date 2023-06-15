@@ -127,14 +127,7 @@ p {
   right: 90px;
   top: 80px;
 }
-.inpTypeSearch {
-  width: 130%;
-  height: 35px;
-  border: none;
-  border-radius: 20px;
-  font-family: Outfit;
-  padding: 0 5px 0 5px;
-}
+
 .inputAppName,
 .inputPassField {
   width: 100%;
@@ -481,6 +474,7 @@ a {
   position: fixed;
   top: 0;
   left: 0;
+  background-color: #000000c6;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   filter: brightness(90%);
@@ -680,7 +674,7 @@ a {
   width: 35px;
   height: 35px;
   margin: 0 0 0 5px;
-  border-radius: 100%;
+  border-radius: 10px;
 }
 @media only screen and (min-width: 675px) {
   .flexDivWhichCenters {
@@ -700,13 +694,5 @@ a {
     position: fixed;
     right: 120px;
     top: 20px;
-  }
-  .inpTypeSearch {
-    width: 130%;
-    height: 35px;
-    border: none;
-    border-radius: 20px;
-    font-family: Outfit;
-    padding: 0 5px 0 5px;
   }
 }
