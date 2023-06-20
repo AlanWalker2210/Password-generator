@@ -256,7 +256,7 @@ function getThePassword() {
 
   let passInfo = document.getElementById("passId").value;
   let passPort = nameId.value;
-  let imageLink = `https://${passPort}/favicon.ico`;
+  let imageLink =`https://t0.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${passPort}&size=128`;
 
   if (localStorage.getItem("itemsJson") == null) {
     thisArray = [];
