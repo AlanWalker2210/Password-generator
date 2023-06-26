@@ -1,0 +1,37 @@
+{
+    "short_name": "Bytepass",
+    "name": "By Bhavya Panchal",
+    "icons" : [
+      {
+      "src": "mImg/bytepass-removebg-resize.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }],
+    "id": "/",
+    "start_url": "/",
+    "background_color": "#000000",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#070c40",
+    "description": "An open source PWA. for generating password and also saving them at same time. with copy feature",
+    "screenshots": [
+        {
+          "src": "mImg/bytepass_ss_1.jpeg",
+          "type": "image/jpeg",
+          "sizes": "720x1433"
+        },
+        {
+          "src": "mImg/bytepass_ss_2.jpeg",
+          "type": "image/jpeg",
+          "sizes": "720x1424"
+
+        },
+        {
+          "src": "mImg/bytepass_ss_3.jpeg",
+          "type": "image/jpeg",
+          "sizes": "720x1436"
+
+        }
+        
+      ]
+  }
