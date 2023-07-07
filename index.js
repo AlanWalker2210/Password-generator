@@ -7,6 +7,9 @@ let card = document.getElementById("Card");
 
 diceClick.addEventListener("click", paste);
 //clip.addEventListener("click", copy);
+window.onload = function(){
+  localStorage.clear();
+}
 
 range.oninput = popRange;
 
