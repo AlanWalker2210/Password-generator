@@ -13,7 +13,7 @@ diceClick.addEventListener("click", paste);
 range.oninput = popRange;
 
 window.onload = function () {
-  localStorage.clear()
+  
   let letLoad = document.getElementById("letLoad");
   let letZoom = document.getElementById("letZoom");
 
