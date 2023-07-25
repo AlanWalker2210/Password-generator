@@ -8,12 +8,9 @@ let card = document.getElementById("Card");
 diceClick.addEventListener("click", paste);
 //clip.addEventListener("click", copy);
 
-
-
 range.oninput = popRange;
 
 window.onload = function () {
-  
   let letLoad = document.getElementById("letLoad");
   let letZoom = document.getElementById("letZoom");
 
@@ -496,5 +493,58 @@ function minus() {
 
   popRange();
 }
+console.log(thisArray);
 
 // let searchFilter = thisArray.filter(letFilter);
+
+const fuseOptions = {
+  // isCaseSensitive: false,
+  // includeScore: true,
+  // shouldSort: true,
+  // includeMatches: false,
+  // findAllMatches: false,
+  // minMatchCharLength: 1,
+  // location: 0,
+  // threshold: 0.6,
+  // distance: 100,
+  // useExtendedSearch: false,
+  // ignoreLocation: false,
+  // ignoreFieldNorm: false,
+  // fieldNormWeight: 1,
+  keys: ["0"],
+};
+let inputField = document.getElementById("thisSearchBar");
+
+inputField.onkeyup = function ret() {
+  console.log(1);
+  const fuse = new Fuse(thisArray, fuseOptions);
+  let inputField = document.getElementById("thisSearchBar").value;
+  const searchPattern = inputField;
+  let arrSearch = fuse.search(searchPattern);
+  let srcOne = document.getElementById("srcOne");
+  let srcTwo = document.getElementById("srcTwo");
+  let srcThi = document.getElementById("srcThi");
+  let manipulate;
+
+  // return fuse.search(searchPattern);
+  let searchArr = [];
+  arrSearch.forEach((element) => {
+    searchArr.push(element);
+  });
+
+  srcOne.src = searchArr[0].item[3];
+};
+
+let searchBarBtn = document.getElementById("searchBarBtn");
+searchBarBtn.onclick = function () {
+  let divHeight = document.getElementById("divHeight");
+  let btnInner = document.getElementById("btnInner");
+  let inputField = document.getElementById("thisSearchBar");
+  inputField.focus();
+  if (btnInner.innerText == "close") {
+    btnInner.innerText = "search";
+  } else {
+    btnInner.innerText = "close";
+  }
+  divHeight.classList.toggle("inputToggle");
+};

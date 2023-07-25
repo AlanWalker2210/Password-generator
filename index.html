@@ -41,6 +41,34 @@
           <div class="p">
             <p>FOSS Password Generator</p>
           </div>
+
+          <div class="searchBarBtn" id="searchBarBtn">
+            <span class="material-symbols-rounded" id="btnInner">search</span>
+          </div>
+
+          <div class="inputHide" id="divHeight">
+            <input
+              type="text"
+              id="thisSearchBar"
+              placeholder="Search Your Items..."
+              class="letSEddit"
+            />
+          </div>
+
+          <div class="searchResults">
+            <div class="searchResultOne aone">
+              <img id="srcOne" />
+              <p id="userNameOne"></p>
+            </div>
+            <div class="searchResultOne atwo">
+              <img id="srcTwo" />
+              <p id="userNameTwo"></p>
+            </div>
+            <div class="searchResultOne atwo">
+              <img id="srcThi" />
+              <p id="userNameTwo"></p>
+            </div>
+          </div>
         </div>
       </header>
 
@@ -303,7 +331,7 @@
         </div>
       </div>
     </section>
-
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
     <script type="text/javascript" defer src="/index.js"></script>
   </body>
 </html>
