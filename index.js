@@ -502,7 +502,7 @@ const fuseOptions = {
   // includeScore: true,
   // shouldSort: true,
   // includeMatches: false,
-  // findAllMatches: false,
+  findAllMatches: true,
   // minMatchCharLength: 1,
   // location: 0,
   // threshold: 0.6,
@@ -524,7 +524,12 @@ inputField.onkeyup = function ret() {
   let srcOne = document.getElementById("srcOne");
   let srcTwo = document.getElementById("srcTwo");
   let srcThi = document.getElementById("srcThi");
-  let manipulate;
+  let userNameOne = document.getElementById("userNameOne");
+  let userNameTwo = document.getElementById("userNameTwo");
+  let userNameThi = document.getElementById("userNameThi");
+  let passWordOne = document.getElementById("passWordOne");
+  let passWordTwo = document.getElementById("passWordTwo");
+  let passWordThi = document.getElementById("passWordThi");
 
   // return fuse.search(searchPattern);
   let searchArr = [];
@@ -532,7 +537,33 @@ inputField.onkeyup = function ret() {
     searchArr.push(element);
   });
 
-  srcOne.src = searchArr[0].item[3];
+  if (searchArr[0] == undefined) {
+    srcOne.src = "";
+    userNameOne.innerHTML = "";
+    passWordOne.innerHTML = "";
+  } else {
+    userNameOne.innerHTML = searchArr[0].item[0];
+    passWordOne.innerHTML = searchArr[0].item[2];
+    srcOne.src = searchArr[0].item[3];
+  }
+  if (searchArr[1] == undefined) {
+    srcTwo.src = "";
+    userNameTwo.innerHTML = "";
+    passWordTwo.innerHTML = "";
+  } else {
+    userNameTwo.innerHTML = searchArr[1].item[0];
+    passWordTwo.innerHTML = searchArr[1].item[2];
+    srcTwo.src = searchArr[1].item[3];
+  }
+  if (searchArr[2] == undefined) {
+    srcThi.src = "";
+    userNameThi.innerHTML = "";
+    passWordThi.innerHTML = "";
+  } else {
+    userNameThi.innerHTML = searchArr[2].item[0];
+    passWordThi.innerHTML = searchArr[2].item[2];
+    srcThi.src = searchArr[2].item[3];
+  }
 };
 
 let searchBarBtn = document.getElementById("searchBarBtn");
